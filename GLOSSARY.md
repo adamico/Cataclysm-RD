@@ -52,6 +52,14 @@ _Avoid_: Domain model (too loose), deep module
 After Ousterhout, with depth measured as leverage (behaviour reachable per unit of interface), not as a lines ratio: a module whose small interface hides a large implementation. It judges *how good* each seam placed by the **Deep Model** is.
 _Avoid_: Deep Model, component
 
+**Machinery**:
+The parts of the **Engine** with no game language of their own, and so outside the **Deep Model**: loading **Content**, save/load, options, geometry, units, randomness, threading.
+_Avoid_: Infrastructure, utilities, core
+
+**Tangle**:
+A place where the **Baseline**'s code disagrees with the **Deep Model**, such as one context's state or rules living in another context's code. Recorded as a porting cost, never as a reason to redraw a context.
+_Avoid_: Leak, coupling, tech debt
+
 ### Guarantees
 
 **Port fidelity**:
