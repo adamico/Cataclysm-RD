@@ -43,7 +43,7 @@ The single upstream release the port starts from. Upstream changes enter only th
 _Avoid_: Upstream, master
 
 **Reference build**:
-The **Baseline** built unmodified, as a separate program, with its parallelism and its **Approximations** turned off. It is what **Gameplay equivalence** is checked against, and it is never a host for ported code.
+The **Baseline** built from untouched sources, as a separate program, with its parallelism and its **Approximations** turned off. Test-only harness programs built from the same untouched sources count as part of it. It is what **Gameplay equivalence** is checked against, and it is never a host for ported code.
 _Avoid_: Oracle (that is the check, not the program), old build, C++ side
 
 ### Judging the codebase
@@ -73,6 +73,10 @@ _Avoid_: Parity, compatibility
 **Gameplay equivalence**:
 An optimization's promise that no player-visible behaviour changes, even if the order of random draws shifts. The default bar for every change.
 _Avoid_: Identical behaviour, determinism
+
+**Observable**:
+A piece of a bounded context's state or output that the player can see, such as a field's type, intensity and age on a tile. Each context declares its **Observables** before it is ported, and **Gameplay equivalence** is judged on them alone: anything else may differ.
+_Avoid_: Output, result, visible state
 
 **Approximation**:
 A change that deliberately alters **Simulation** results for speed, such as thinking less often for unseen creatures. Always flagged explicitly and kept behind an option; never passed off as **Gameplay equivalence**.
