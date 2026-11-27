@@ -34,7 +34,10 @@ A file belongs to exactly one context. Where a file clearly serves two (for exam
 ## Engine, Frontend and Content split
 
 - **Content:** everything under `data/`.
-- **Frontend:** files under `src/` that include curses, SDL or ImGui headers, or whose names mark them as UI or rendering (`*_ui.*`, `cata_tiles*`, `sdltiles*`, `output*`, `*menu*`, `ui_*`, `panels*`, `wincurse*`, `cursesport*`).
+- **Frontend:** files under `src/` that meet any of these (patched after calibration, see [engine-calibration.md](engine-calibration.md)):
+  - names that mark them as UI or rendering (`*_ui.*`, `cata_tiles*`, `sdltiles*`, `output*`, `*menu*`, `ui_*`, `panels*`, `wincurse*`, `cursesport*`);
+  - a stem on the shared display and input list: `cursesdef advanced_inv.* pixel_minimap_projectors font_loader mod_tileset sdlsound color color_loader popup uistate display widget animation drawing_primitives editmap game_inventory help descriptions bodygraph veh_interact crafting_gui iuse_software_.* dialogue_win magic_teleporter_list auto_note auto_pickup distraction_manager overlay_ordering music string_editor_window input action map_item_stack item_search iteminfo_query live_view ascii_art game_ui rotatable_symbols wish player_display vehicle_display newcharacter string_input_popup ui trade_win .*_display worldfactory title_screen armor_layers`;
+  - an include of a curses, SDL or ImGui header **other than `cursesdef.h`**. A file whose use of SDL is incidental (clipboard, Android JNI, a single tiles hook, sound) or a compute API (BN's `compute/gpu_*`) stays Engine; list those files.
 - **Engine:** everything else under `src/`, including `src/` subdirectories that aren't Frontend by the rule above.
 - **Ambiguous:** a file the rule puts in Engine although it clearly mixes in UI code. Count it as Engine and list it.
 - Third-party code vendored under `src/third-party` (or similar) is excluded and reported as its own line.
