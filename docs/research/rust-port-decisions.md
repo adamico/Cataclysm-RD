@@ -1,0 +1,54 @@
+# Rust port: decisions so far
+
+Status: grilling session, 2026-11-27. This was the primary source for charting the `/wayfinder` map; moved from `adamico/Cataclysm-DDA` to this repo on 2026-11-27. Later decisions live in the map's tickets, not here. Terms are defined in [GLOSSARY.md](../../GLOSSARY.md). The fork research is in [baseline-candidates.md](baseline-candidates.md).
+
+## Goal
+
+- **The main goal is porting the Engine to Rust.** Faster **Simulation** in **Dense areas** (labs above all) comes along with it. This reverses the starting idea, where optimization came first and Rust was a side study.
+- **Success for the optimization is measured by Turn throughput** on a **Benchmark save**: game turns per wall-clock second while time passes without input. Input latency is not a metric, because the game is turn-based.
+
+## Decisions
+
+| # | Decision | Why |
+|---|---|---|
+| D1 | **The fork stays a fork.** Nothing is submitted to CleverRaven or TLG. | Both ban AI-assisted contributions (see Policy facts). BN accepts them with disclosure, which counts as a plus for BN, not a deciding factor. |
+| D2 | **Phase 0 is an estimate, and it gates go/no-go.** It covers code statistics, a dependency map, at most one spike, and a written estimate. | The size of the job must be known before committing to it. |
+| D3 | **The estimate gives two figures:** person-months for an experienced human team, and a separate AI-assisted figure, explaining which parts AI speeds up and which it doesn't. | |
+| D4 | **The game splits into Frontend, Engine and Content.** The Engine is ported first and the Frontend last. | The Engine is where the optimization pays off. CDDA isn't client/server, so "backend" is avoided. |
+| D5 | **Port fidelity means Gameplay equivalence only.** Same player-visible behaviour; the order of random draws may change. | Speedups are only measurable if the lab is simulated the same way. |
+| D6 | **Approximations are opt-in.** Every **Approximation** is flagged and sits behind an option. | They must never pass as Gameplay equivalence. |
+| D7 | **Save and mod compatibility are dropped.** Content is migrated, not frozen: its schema may change where the Deep Model calls for it. | This reverses an earlier "old saves must load". |
+| D8 | **Structure is free and behaviour is fixed.** The port may restructure as much as it likes, provided Port fidelity holds. | A Deep Model may call for a very different structure from the C++. |
+| D9 | **Module seams follow bounded contexts in the game's domain** (a **Deep Model**, in Evans' sense), not the current C++ file layout. | |
+| D10 | **Each seam is judged as a Deep module** (Ousterhout, with depth measured as leverage), using the `/codebase-design` vocabulary. | These skills are built on both books. |
+| D11 | **The ubiquitous language is distilled from Content and code.** The human-written `doc/` folder is not a source. | A generated wiki (Game glossary plus pages produced from Content) is parked until the Game glossary exists. |
+| D12 | **There are two glossary contexts:** Port (project language, the current GLOSSARY.md) and Game (domain language). The Game one is created with its first resolved term, together with a GLOSSARY-MAP.md. | |
+| D13 | **The Baseline is a frozen stable release.** Upstream changes enter only through a deliberate re-baseline. | This avoids half-finished features and a moving target. |
+| D14 | **The Baseline is chosen on porting cost and on the content you end up with.** Licensing doesn't matter. | Every candidate is CC-BY-SA 3.0, which allows forking and AI use in your own fork. |
+| D15 | **The shortlist is Bright Nights v0.13.0 (`e7b4976`) and CDDA 0.H-RELEASE (`08f04fd07f`).** Dropped: CDDA 0.G (0.H-RELEASE beats it), TLG (kept as a content reference only), the original Cataclysm (no JSON Content, a different game; to verify). | Earlier ranking: BN first, with 0.G and TLG joint second. That was revised after the fork analysis. |
+| D16 | **Profiling setup:** Linux release build with debug symbols, `perf`, and drawing kept out of the measurements. Scope is **Simulation**: rendering, UI and save/load are excluded, and mapgen is measured but not targeted. | |
+| D17 | **A Dense area means any kind of crowding:** creatures, fields, items, or churn in light and visibility. Profiling decides which kind dominates. | |
+| D18 | **The port lives in its own repo, `adamico/Cataclysm-RD` (Cataclysm: Rusted Dawn),** whichever Baseline wins. The C++ Baseline is a pinned, read-only reference (clone or submodule), never a fork built on. | Settles "where the port lives". An incremental FFI port can still build the C++ alongside, from a submodule. |
+
+## Policy facts (sources)
+
+- **CDDA bans LLM content:** `CONTRIBUTING.md` lines 47–50 ("Licensing and Authorship") and `CODE_OF_CONDUCT.md` rule 7 (added by PR #88990, 2026-10). It is enforced: #88455 and #88456 (performance PRs) and #89733 were closed as AI-generated.
+- **CDDA's bar for performance PRs:** before/after measurements, a profiled save, tests, and roughly 500 lines or fewer (e.g. #88315, #88527, #85139; #89479 was closed for lacking evidence). Useful as a standard for our own measurements.
+- **BN allows AI-assisted PRs with disclosure:** an `Assisted-by:` trailer on each commit and a human-written PR summary (`docs/en/contribute/contributing.md`). It ships AGENTS.md. A 2023 Rust proof of concept, #3766, was closed: "won't happen till build system is unified".
+- **TLG refuses all AI-generated submissions:** `doc/AI_POLICY_STATEMENT.md`.
+- **Licence:** all candidates are CC-BY-SA 3.0. BN also has AGPL-3.0 for docs/ and scripts/, and its Flathub listing disagrees with that, which is a point to check. A Rust port is an adaptation, so it stays CC-BY-SA with attribution. These are contribution policies and they don't bind forks.
+
+## Open questions (waiting on the architecture analysis)
+
+The architecture analysis itself is **not yet greenlit**.
+
+- **Which Baseline:** BN v0.13.0 or CDDA 0.H-RELEASE. The deciding factor is modularity: how well each fits a Deep Model, and how deep its modules are.
+- **R3, incremental or rewrite:** an incremental FFI port (`cxx`) versus a rewrite. The user wants the architecture analysis to answer "is the Engine modular enough?" first.
+- **Lua, if BN:** whether Lua scripting counts as **Content**, and how its hooks, BN's threading and its GPU compute affect proving Port fidelity.
+- **Benchmark save:** which lab, and on which Baseline.
+- **Game glossary:** its first bounded contexts. Candidates to confirm: Creatures, Terrain & Map, Fields, Items, Vehicles, Time & Weather.
+- **How the analysis runs:** shallow clones of both frozen releases into the scratchpad, then parallel sub-agents scoring Deep Model fit and Deep module quality.
+
+## Next step
+
+Chart this as a `/wayfinder` map on `adamico/Cataclysm-RD`. Use the Decisions above as its starting decisions and the Open questions as its tickets (research for the analysis, grilling for the choices) and as its "Not yet specified" section.
