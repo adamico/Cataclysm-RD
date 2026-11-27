@@ -42,6 +42,10 @@ _Avoid_: Assets, data files
 The single upstream release the port starts from. Upstream changes enter only through a deliberate re-baseline, never by routine syncing.
 _Avoid_: Upstream, master
 
+**Reference build**:
+The **Baseline** built unmodified, as a separate program, with its parallelism and its **Approximations** turned off. It is what **Gameplay equivalence** is checked against, and it is never a host for ported code.
+_Avoid_: Oracle (that is the check, not the program), old build, C++ side
+
 ### Judging the codebase
 
 **Deep Model**:

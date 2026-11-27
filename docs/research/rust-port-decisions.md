@@ -28,7 +28,7 @@ Status: grilling session, 2026-11-27. This was the primary source for charting t
 | D15 | **The shortlist is Bright Nights v0.13.0 (`e7b4976`) and CDDA 0.H-RELEASE (`08f04fd07f`).** Dropped: CDDA 0.G (0.H-RELEASE beats it), TLG (kept as a content reference only), the original Cataclysm (no JSON Content, a different game; to verify). | Earlier ranking: BN first, with 0.G and TLG joint second. That was revised after the fork analysis. |
 | D16 | **Profiling setup:** Linux release build with debug symbols, `perf`, and drawing kept out of the measurements. Scope is **Simulation**: rendering, UI and save/load are excluded, and mapgen is measured but not targeted. | |
 | D17 | **A Dense area means any kind of crowding:** creatures, fields, items, or churn in light and visibility. Profiling decides which kind dominates. | |
-| D18 | **The port lives in its own repo, `adamico/Cataclysm-RD` (Cataclysm: Rusted Dawn),** whichever Baseline wins. The C++ Baseline is a pinned, read-only reference (clone or submodule), never a fork built on. | Settles "where the port lives". An incremental FFI port can still build the C++ alongside, from a submodule. |
+| D18 | **The port lives in its own repo, `adamico/Cataclysm-RD` (Cataclysm: Rusted Dawn),** whichever Baseline wins. The C++ Baseline is a pinned, read-only reference (clone or submodule), never a fork built on. | Settles "where the port lives". ~~An incremental FFI port can still build the C++ alongside, from a submodule.~~ Superseded: the Engine is rewritten and links no C++ ([ADR 0003](../adr/0003-rewrite-with-reference.md)). |
 
 ## Policy facts (sources)
 
