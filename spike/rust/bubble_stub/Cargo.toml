@@ -1,0 +1,12 @@
+[package]
+name = "bubble_stub"
+version = "0.0.0"
+edition.workspace = true
+publish.workspace = true
+
+[dependencies]
+bn_dice = { path = "../bn_dice" }
+fields = { path = "../fields" }
+
+[dev-dependencies]
+combat_stub = { path = "../combat_stub" }

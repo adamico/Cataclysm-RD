@@ -1,0 +1,7 @@
+[workspace]
+resolver = "2"
+members = ["bn_dice", "fields", "bubble_stub", "combat_stub"]
+
+[workspace.package]
+edition = "2021"
+publish = false
