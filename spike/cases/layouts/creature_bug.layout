@@ -1,0 +1,7 @@
+# creature case: an insect in insecticidal gas, bees and fungicidal gas
+region 1 1
+ter all t_dirt
+field 6 6 fd_insecticidal_gas 3 1
+field 6 6 fd_fungicidal_gas 3 1
+field 6 6 fd_bees 2 1
+monster 6 6 mon_bee

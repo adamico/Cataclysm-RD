@@ -1,0 +1,12 @@
+# gases spreading round walls and through a PERMEABLE wall
+region 1 1
+ter all t_dirt
+ter 6 4 t_wall
+ter 6 5 t_wall
+ter 6 6 t_wall_resin_cage
+ter 6 7 t_wall
+field 5 5 fd_smoke 3 1
+field 5 6 fd_toxic_gas 3 5
+field 7 6 fd_tear_gas 3 1
+field 2 2 fd_nuke_gas 3 1
+field 9 9 fd_relax_gas 3 1

@@ -1,0 +1,7 @@
+# fire in a FIRE_CONTAINER (fireplace) with fuel: contained, no spread
+region 1 1
+ter all t_grass
+furn 6 6 f_fireplace
+item 6 6 2x4
+item 6 6 stick
+field 6 6 fd_fire 3 1

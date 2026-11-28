@@ -1,0 +1,6 @@
+# radiating fields add rads to the tile
+region 1 1
+ter all t_dirt
+rad 6 6 5
+field 6 6 fd_nuke_gas 1 1
+field 3 3 fd_nuke_gas 3 1

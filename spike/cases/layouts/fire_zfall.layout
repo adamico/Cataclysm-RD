@@ -1,0 +1,9 @@
+# fire on open air falls to the z-level below
+region 1 1
+zlevels 0 1
+ter all t_dirt
+ter 6 6 t_open_air 1
+ter 8 8 t_open_air 1
+field 6 6 fd_fire 3 1 1
+field 8 8 fd_fire 2 1 1
+field 8 8 fd_fire 2 1 0

@@ -78,3 +78,26 @@ same branches, same order of dice calls with the same arguments.
 - **Kept:** `create_hot_air` reads `point(rng(-1, 1), rng(-1, 1))` left to right, which is clang's order (the Reference build); C++ leaves it unspecified.
 - **Diverges (UB in BN):** `fd_gas_remover` erases from a `std::map` inside a range-for over it, then increments the erased iterator. Rust removes every dangerous gas on the tile, which is what the code means; BN's behaviour after the erase depends on allocator state.
 - `propagate_field` depends on the tie order of `std::priority_queue`; `heap.rs` re-implements libstdc++'s `__push_heap`/`__adjust_heap`, checked against clang++/libstdc++ output in `heap_tie_order_matches_libstdcxx`.
+
+## Session 3: stubs under replay
+
+The replay tests (`fields_harness/tests/replay.rs`, findings in
+`REPLAY_FINDINGS.md`) answer every cross-context call from the recorded case:
+
+| port | live (soak, smoke tests) | replay |
+|---|---|---|
+| `MapData` | the hand-made `StubMapData` | built from the case's `ter_def` / `furn_def` marks, so flags are BN's own. The hand-made catalogue was wrong for `t_grass`: BN `e7b4976` gives it no flammable flag. |
+| `Items` | `burn` records, destroys nothing, no products | `burn` checks its inputs against the recorded `item::burn` call, then takes `destroyed`, the weight after, `fuel_produced`, `smoke_produced` and the burn products from it. Its draws are consumed. |
+| `Combat` | `RecordingCombat` | `fields_harness::creature::ReplayCombat`. Queries come from `creature_def`. Every wrapped sink must be the next recorded call with the same arguments. `deal_damage` (virtual in BN) consumes the draws and calls whose BN call site isn't Fields code. `teleport` moves the creature where BN put it. |
+| `Dice` | `BnDice` (SplitMix64) | `fields_harness::replay::ReplayDice` (`d == 0` draws, exact arguments). `Dice::foreign` is the new hook that hands a stub its recorded call. |
+
+Ports changed in session 3:
+- `Items::burnproducts` takes `&mut self`.
+- `Dice` gained `foreign()`, defaulting to `None`.
+
+Translation fix: `field_effect.is_environmental` defaults to false
+(`content.rs`), as BN's loader does.
+
+Correction to session 2: BN's engine is `std::minstd_rand0` (`rng.h:26`), not
+mt19937. Replay is helper-level, so nothing depends on it. It does matter for
+soak seeds (`spike/soak/SOAK_RESULT.md`).

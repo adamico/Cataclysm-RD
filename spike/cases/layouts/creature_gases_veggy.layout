@@ -1,0 +1,7 @@
+# creature case: triffid (veggy) in smoke 2 + tear gas 2 + nuke gas 2
+region 1 1
+ter all t_dirt
+field 6 6 fd_smoke 2 1
+field 6 6 fd_tear_gas 2 1
+field 6 6 fd_nuke_gas 2 1
+monster 6 6 mon_triffid

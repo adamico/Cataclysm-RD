@@ -1,0 +1,51 @@
+{"k":"header","format":"bn-draws/1","baseline":"e7b4976","case":"creature_fire","seed":5,"turns":5,"layout":"creature_fire.layout","rule":"creature_in_field"}
+{"k":"mark","before":0,"label":"creature_def","id":"mon_zombie","monster":true,"flies":false,"digs":false,"digging":false,"armor_heat_torso":0,"tags":["NO_BREATHE","SEES","grp:Flesh","grp:FleshNVeg"]}
+{"k":"mark","before":0,"label":"creature","turn":0,"hp":80,"moves":0,"dead":false}
+{"k":"seed","before":0,"seed":5}
+{"k":"mark","before":0,"label":"turn","turn":1}
+{"k":"draw","i":0,"d":0,"fn":"rng","args":[6,12],"r":6,"pc":"0x3f71f9f","src":"src/map/map_field.cpp:645 (map::monster_in_field)"}
+{"k":"draw","i":1,"d":0,"fn":"rng","args":[4,18],"r":13,"pc":"0x3f71fd5","src":"src/map/map_field.cpp:648 (map::monster_in_field)"}
+{"k":"mark","before":2,"label":"call","fn":"Creature::add_effect","eff":"onfire","dur":13,"intensity":0,"pc":"0x421f235","src":"src/monster.cpp:2877 (monster::add_effect)"}
+{"k":"draw","i":2,"d":0,"fn":"rng","args":[5,10],"r":9,"pc":"0x422b513","src":"src/monster.cpp:? (monster::process_one_effect)"}
+{"k":"mark","before":3,"label":"ret","fn":"Creature::add_effect"}
+{"k":"mark","before":3,"label":"call","fn":"Creature::check_dead_state","pc":"0x3f72aeb","src":"src/map/map_field.cpp:796 (map::monster_in_field)"}
+{"k":"mark","before":3,"label":"ret","fn":"Creature::check_dead_state"}
+{"k":"mark","before":3,"label":"end_turn","turn":1}
+{"k":"mark","before":3,"label":"creature","turn":1,"hp":62,"moves":-20,"dead":false}
+{"k":"mark","before":3,"label":"turn","turn":2}
+{"k":"draw","i":3,"d":0,"fn":"rng","args":[6,12],"r":8,"pc":"0x3f71f9f","src":"src/map/map_field.cpp:645 (map::monster_in_field)"}
+{"k":"draw","i":4,"d":0,"fn":"rng","args":[5,22],"r":16,"pc":"0x3f71fd5","src":"src/map/map_field.cpp:648 (map::monster_in_field)"}
+{"k":"mark","before":5,"label":"call","fn":"Creature::add_effect","eff":"onfire","dur":16,"intensity":0,"pc":"0x421f235","src":"src/monster.cpp:2877 (monster::add_effect)"}
+{"k":"mark","before":5,"label":"ret","fn":"Creature::add_effect"}
+{"k":"mark","before":5,"label":"call","fn":"Creature::check_dead_state","pc":"0x3f72aeb","src":"src/map/map_field.cpp:796 (map::monster_in_field)"}
+{"k":"mark","before":5,"label":"ret","fn":"Creature::check_dead_state"}
+{"k":"mark","before":5,"label":"end_turn","turn":2}
+{"k":"mark","before":5,"label":"creature","turn":2,"hp":51,"moves":-40,"dead":false}
+{"k":"mark","before":5,"label":"turn","turn":3}
+{"k":"draw","i":5,"d":0,"fn":"rng","args":[6,12],"r":6,"pc":"0x3f71f9f","src":"src/map/map_field.cpp:645 (map::monster_in_field)"}
+{"k":"draw","i":6,"d":0,"fn":"rng","args":[4,18],"r":7,"pc":"0x3f71fd5","src":"src/map/map_field.cpp:648 (map::monster_in_field)"}
+{"k":"mark","before":7,"label":"call","fn":"Creature::add_effect","eff":"onfire","dur":7,"intensity":0,"pc":"0x421f235","src":"src/monster.cpp:2877 (monster::add_effect)"}
+{"k":"mark","before":7,"label":"ret","fn":"Creature::add_effect"}
+{"k":"mark","before":7,"label":"call","fn":"Creature::check_dead_state","pc":"0x3f72aeb","src":"src/map/map_field.cpp:796 (map::monster_in_field)"}
+{"k":"mark","before":7,"label":"ret","fn":"Creature::check_dead_state"}
+{"k":"mark","before":7,"label":"end_turn","turn":3}
+{"k":"mark","before":7,"label":"creature","turn":3,"hp":42,"moves":-60,"dead":false}
+{"k":"mark","before":7,"label":"turn","turn":4}
+{"k":"draw","i":7,"d":0,"fn":"rng","args":[6,12],"r":8,"pc":"0x3f71f9f","src":"src/map/map_field.cpp:645 (map::monster_in_field)"}
+{"k":"draw","i":8,"d":0,"fn":"rng","args":[5,22],"r":12,"pc":"0x3f71fd5","src":"src/map/map_field.cpp:648 (map::monster_in_field)"}
+{"k":"mark","before":9,"label":"call","fn":"Creature::add_effect","eff":"onfire","dur":12,"intensity":0,"pc":"0x421f235","src":"src/monster.cpp:2877 (monster::add_effect)"}
+{"k":"mark","before":9,"label":"ret","fn":"Creature::add_effect"}
+{"k":"mark","before":9,"label":"call","fn":"Creature::check_dead_state","pc":"0x3f72aeb","src":"src/map/map_field.cpp:796 (map::monster_in_field)"}
+{"k":"mark","before":9,"label":"ret","fn":"Creature::check_dead_state"}
+{"k":"mark","before":9,"label":"end_turn","turn":4}
+{"k":"mark","before":9,"label":"creature","turn":4,"hp":31,"moves":-80,"dead":false}
+{"k":"mark","before":9,"label":"turn","turn":5}
+{"k":"draw","i":9,"d":0,"fn":"rng","args":[6,12],"r":10,"pc":"0x3f71f9f","src":"src/map/map_field.cpp:645 (map::monster_in_field)"}
+{"k":"draw","i":10,"d":0,"fn":"rng","args":[6,26],"r":25,"pc":"0x3f71fd5","src":"src/map/map_field.cpp:648 (map::monster_in_field)"}
+{"k":"mark","before":11,"label":"call","fn":"Creature::add_effect","eff":"onfire","dur":25,"intensity":0,"pc":"0x421f235","src":"src/monster.cpp:2877 (monster::add_effect)"}
+{"k":"mark","before":11,"label":"ret","fn":"Creature::add_effect"}
+{"k":"mark","before":11,"label":"call","fn":"Creature::check_dead_state","pc":"0x3f72aeb","src":"src/map/map_field.cpp:796 (map::monster_in_field)"}
+{"k":"mark","before":11,"label":"ret","fn":"Creature::check_dead_state"}
+{"k":"mark","before":11,"label":"end_turn","turn":5}
+{"k":"mark","before":11,"label":"creature","turn":5,"hp":18,"moves":-100,"dead":false}
+{"k":"footer","draws":11,"top":11,"bypass_steps":0,"unrecorded":0}

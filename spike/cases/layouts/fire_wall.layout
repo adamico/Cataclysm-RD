@@ -1,0 +1,9 @@
+# fire on FLAMMABLE terrain (wooden wall) and FLAMMABLE_HARD floor
+region 1 1
+ter all t_dirt
+ter 5 5 t_wall_wood
+ter 6 5 t_wall_wood
+ter 5 6 t_floor
+ter 6 6 t_floor
+field 5 5 fd_fire 3 1
+field 6 6 fd_fire 2 1

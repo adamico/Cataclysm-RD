@@ -1,0 +1,91 @@
+{"k":"header","format":"bn-draws/1","baseline":"e7b4976","case":"gas_fall","seed":6,"turns":5,"layout":"gas_fall.layout"}
+{"k":"mark","before":0,"label":"ter_def","id":"t_dirt","movecost":2,"flags":[]}
+{"k":"mark","before":0,"label":"ter_def","id":"t_null","movecost":0,"flags":[]}
+{"k":"mark","before":0,"label":"ter_def","id":"t_pit","movecost":10,"flags":[]}
+{"k":"mark","before":0,"label":"furn_def","id":"f_ash","movecost":0,"flags":["SEALED"]}
+{"k":"mark","before":0,"label":"furn_def","id":"f_null","movecost":0,"flags":[]}
+{"k":"seed","before":0,"seed":6}
+{"k":"mark","before":0,"label":"turn","turn":1}
+{"k":"mark","before":0,"label":"submap","index":0}
+{"k":"draw","i":1,"d":1,"fn":"rng","args":[1,2],"r":1}
+{"k":"draw","i":2,"d":1,"fn":"rng","args":[1,2],"r":2}
+{"k":"draw","i":0,"d":0,"fn":"dice","args":[2,2],"r":3,"pc":"0x3f76d82","src":"src/map/map_field.cpp:1641 (process_fields_in_submap)"}
+{"k":"mark","before":3,"label":"submap","index":1}
+{"k":"draw","i":3,"d":0,"fn":"rng","args":[1,100],"r":54,"pc":"0x3f751da","src":"src/map/map_field.cpp:1330 (process_fields_in_submap)"}
+{"k":"draw","i":5,"d":1,"fn":"rng","args":[1,2],"r":2}
+{"k":"draw","i":6,"d":1,"fn":"rng","args":[1,2],"r":1}
+{"k":"draw","i":4,"d":0,"fn":"dice","args":[2,2],"r":3,"pc":"0x3f76d82","src":"src/map/map_field.cpp:1641 (process_fields_in_submap)"}
+{"k":"draw","i":7,"d":0,"fn":"rng","args":[1,100],"r":32,"pc":"0x3f751da","src":"src/map/map_field.cpp:1330 (process_fields_in_submap)"}
+{"k":"draw","i":9,"d":1,"fn":"rng","args":[1,2],"r":1}
+{"k":"draw","i":10,"d":1,"fn":"rng","args":[1,2],"r":1}
+{"k":"draw","i":8,"d":0,"fn":"dice","args":[2,2],"r":2,"pc":"0x3f76d82","src":"src/map/map_field.cpp:1641 (process_fields_in_submap)"}
+{"k":"mark","before":11,"label":"end_turn","turn":1}
+{"k":"mark","before":11,"label":"turn","turn":2}
+{"k":"mark","before":11,"label":"submap","index":0}
+{"k":"draw","i":12,"d":1,"fn":"rng","args":[1,3],"r":1}
+{"k":"draw","i":13,"d":1,"fn":"rng","args":[1,3],"r":2}
+{"k":"draw","i":11,"d":0,"fn":"dice","args":[2,3],"r":3,"pc":"0x3f76d82","src":"src/map/map_field.cpp:1641 (process_fields_in_submap)"}
+{"k":"mark","before":14,"label":"submap","index":1}
+{"k":"draw","i":14,"d":0,"fn":"rng","args":[1,100],"r":31,"pc":"0x3f751da","src":"src/map/map_field.cpp:1330 (process_fields_in_submap)"}
+{"k":"draw","i":16,"d":1,"fn":"rng","args":[1,3],"r":1}
+{"k":"draw","i":17,"d":1,"fn":"rng","args":[1,3],"r":3}
+{"k":"draw","i":15,"d":0,"fn":"dice","args":[2,3],"r":4,"pc":"0x3f76d82","src":"src/map/map_field.cpp:1641 (process_fields_in_submap)"}
+{"k":"draw","i":18,"d":0,"fn":"rng","args":[1,100],"r":21,"pc":"0x3f751da","src":"src/map/map_field.cpp:1330 (process_fields_in_submap)"}
+{"k":"draw","i":20,"d":1,"fn":"rng","args":[1,183],"r":59}
+{"k":"draw","i":21,"d":1,"fn":"rng","args":[1,183],"r":33}
+{"k":"draw","i":19,"d":0,"fn":"dice","args":[2,183],"r":92,"pc":"0x3f76d82","src":"src/map/map_field.cpp:1641 (process_fields_in_submap)"}
+{"k":"mark","before":22,"label":"end_turn","turn":2}
+{"k":"mark","before":22,"label":"turn","turn":3}
+{"k":"mark","before":22,"label":"submap","index":0}
+{"k":"draw","i":22,"d":0,"fn":"rng","args":[1,100],"r":3,"pc":"0x3f751da","src":"src/map/map_field.cpp:1330 (process_fields_in_submap)"}
+{"k":"draw","i":23,"d":0,"fn":"rng","args":[0,7],"r":0,"pc":"0x3f77071","src":"src/map/map_field.cpp:1345 (process_fields_in_submap)"}
+{"k":"draw","i":25,"d":1,"fn":"rng","args":[1,183],"r":55}
+{"k":"draw","i":26,"d":1,"fn":"rng","args":[1,183],"r":74}
+{"k":"draw","i":24,"d":0,"fn":"dice","args":[2,183],"r":129,"pc":"0x3f76d82","src":"src/map/map_field.cpp:1641 (process_fields_in_submap)"}
+{"k":"mark","before":27,"label":"submap","index":1}
+{"k":"draw","i":27,"d":0,"fn":"rng","args":[1,100],"r":51,"pc":"0x3f751da","src":"src/map/map_field.cpp:1330 (process_fields_in_submap)"}
+{"k":"draw","i":29,"d":1,"fn":"rng","args":[1,4],"r":1}
+{"k":"draw","i":30,"d":1,"fn":"rng","args":[1,4],"r":3}
+{"k":"draw","i":28,"d":0,"fn":"dice","args":[2,4],"r":4,"pc":"0x3f76d82","src":"src/map/map_field.cpp:1641 (process_fields_in_submap)"}
+{"k":"draw","i":31,"d":0,"fn":"rng","args":[1,100],"r":59,"pc":"0x3f751da","src":"src/map/map_field.cpp:1330 (process_fields_in_submap)"}
+{"k":"draw","i":33,"d":1,"fn":"rng","args":[1,184],"r":15}
+{"k":"draw","i":34,"d":1,"fn":"rng","args":[1,184],"r":30}
+{"k":"draw","i":32,"d":0,"fn":"dice","args":[2,184],"r":45,"pc":"0x3f76d82","src":"src/map/map_field.cpp:1641 (process_fields_in_submap)"}
+{"k":"mark","before":35,"label":"end_turn","turn":3}
+{"k":"mark","before":35,"label":"turn","turn":4}
+{"k":"mark","before":35,"label":"submap","index":0}
+{"k":"draw","i":36,"d":1,"fn":"rng","args":[1,184],"r":102}
+{"k":"draw","i":37,"d":1,"fn":"rng","args":[1,184],"r":170}
+{"k":"draw","i":35,"d":0,"fn":"dice","args":[2,184],"r":272,"pc":"0x3f76d82","src":"src/map/map_field.cpp:1641 (process_fields_in_submap)"}
+{"k":"draw","i":39,"d":1,"fn":"rng","args":[1,2],"r":1}
+{"k":"draw","i":40,"d":1,"fn":"rng","args":[1,2],"r":1}
+{"k":"draw","i":38,"d":0,"fn":"dice","args":[2,2],"r":2,"pc":"0x3f76d82","src":"src/map/map_field.cpp:1641 (process_fields_in_submap)"}
+{"k":"mark","before":41,"label":"submap","index":1}
+{"k":"draw","i":41,"d":0,"fn":"rng","args":[1,100],"r":47,"pc":"0x3f751da","src":"src/map/map_field.cpp:1330 (process_fields_in_submap)"}
+{"k":"draw","i":43,"d":1,"fn":"rng","args":[1,5],"r":3}
+{"k":"draw","i":44,"d":1,"fn":"rng","args":[1,5],"r":3}
+{"k":"draw","i":42,"d":0,"fn":"dice","args":[2,5],"r":6,"pc":"0x3f76d82","src":"src/map/map_field.cpp:1641 (process_fields_in_submap)"}
+{"k":"draw","i":45,"d":0,"fn":"rng","args":[1,100],"r":29,"pc":"0x3f751da","src":"src/map/map_field.cpp:1330 (process_fields_in_submap)"}
+{"k":"draw","i":47,"d":1,"fn":"rng","args":[1,273],"r":114}
+{"k":"draw","i":48,"d":1,"fn":"rng","args":[1,273],"r":265}
+{"k":"draw","i":46,"d":0,"fn":"dice","args":[2,273],"r":379,"pc":"0x3f76d82","src":"src/map/map_field.cpp:1641 (process_fields_in_submap)"}
+{"k":"mark","before":49,"label":"end_turn","turn":4}
+{"k":"mark","before":49,"label":"turn","turn":5}
+{"k":"mark","before":49,"label":"submap","index":0}
+{"k":"draw","i":49,"d":0,"fn":"rng","args":[1,100],"r":80,"pc":"0x3f751da","src":"src/map/map_field.cpp:1330 (process_fields_in_submap)"}
+{"k":"draw","i":51,"d":1,"fn":"rng","args":[1,277],"r":150}
+{"k":"draw","i":52,"d":1,"fn":"rng","args":[1,277],"r":263}
+{"k":"draw","i":50,"d":0,"fn":"dice","args":[2,277],"r":413,"pc":"0x3f76d82","src":"src/map/map_field.cpp:1641 (process_fields_in_submap)"}
+{"k":"draw","i":54,"d":1,"fn":"rng","args":[1,3],"r":1}
+{"k":"draw","i":55,"d":1,"fn":"rng","args":[1,3],"r":2}
+{"k":"draw","i":53,"d":0,"fn":"dice","args":[2,3],"r":3,"pc":"0x3f76d82","src":"src/map/map_field.cpp:1641 (process_fields_in_submap)"}
+{"k":"mark","before":56,"label":"submap","index":1}
+{"k":"draw","i":56,"d":0,"fn":"rng","args":[1,100],"r":90,"pc":"0x3f751da","src":"src/map/map_field.cpp:1330 (process_fields_in_submap)"}
+{"k":"draw","i":58,"d":1,"fn":"rng","args":[1,6],"r":3}
+{"k":"draw","i":59,"d":1,"fn":"rng","args":[1,6],"r":4}
+{"k":"draw","i":57,"d":0,"fn":"dice","args":[2,6],"r":7,"pc":"0x3f76d82","src":"src/map/map_field.cpp:1641 (process_fields_in_submap)"}
+{"k":"draw","i":61,"d":1,"fn":"rng","args":[1,274],"r":250}
+{"k":"draw","i":62,"d":1,"fn":"rng","args":[1,274],"r":120}
+{"k":"draw","i":60,"d":0,"fn":"dice","args":[2,274],"r":370,"pc":"0x3f76d82","src":"src/map/map_field.cpp:1641 (process_fields_in_submap)"}
+{"k":"mark","before":63,"label":"end_turn","turn":5}
+{"k":"footer","draws":63,"top":29,"bypass_steps":0,"unrecorded":0}

@@ -1,0 +1,28 @@
+{"k":"header","format":"bn-draws/1","baseline":"e7b4976","case":"creature_sticky","seed":4,"turns":5,"layout":"creature_sticky.layout","rule":"creature_in_field"}
+{"k":"mark","before":0,"label":"creature_def","id":"mon_zombie","monster":true,"flies":false,"digs":false,"digging":false,"armor_heat_torso":0,"tags":["NO_BREATHE","SEES","grp:Flesh","grp:FleshNVeg"]}
+{"k":"mark","before":0,"label":"creature","turn":0,"hp":80,"moves":0,"dead":false}
+{"k":"seed","before":0,"seed":4}
+{"k":"mark","before":0,"label":"turn","turn":1}
+{"k":"mark","before":0,"label":"call","fn":"Creature::add_effect","eff":"webbed","dur":1,"intensity":2,"pc":"0x3f71c8a","src":"src/map/map_field.cpp:608 (map::monster_in_field)"}
+{"k":"mark","before":0,"label":"ret","fn":"Creature::add_effect"}
+{"k":"draw","i":0,"d":0,"fn":"one_in","args":[0],"r":true,"pc":"0x3f71851","src":"src/map/map_field.cpp:564 (map::creature_in_field)"}
+{"k":"draw","i":1,"d":0,"fn":"rng","args":[2,2],"r":2,"pc":"0x3f71871","src":"src/map/field_type.h:89 (field_effect::get_duration)"}
+{"k":"mark","before":2,"label":"call","fn":"Creature::add_effect","eff":"sap","dur":2,"intensity":1,"pc":"0x3f71936","src":"src/map/map_field.cpp:577 (map::creature_in_field)"}
+{"k":"mark","before":2,"label":"call","fn":"Creature::add_effect","eff":"sap","dur":2,"intensity":1,"pc":"0x381fef9","src":"src/creature.cpp:1430 (Creature::add_effect)"}
+{"k":"mark","before":2,"label":"ret","fn":"Creature::add_effect"}
+{"k":"mark","before":2,"label":"ret","fn":"Creature::add_effect"}
+{"k":"mark","before":2,"label":"end_turn","turn":1}
+{"k":"mark","before":2,"label":"creature","turn":1,"hp":80,"moves":-610,"dead":false}
+{"k":"mark","before":2,"label":"turn","turn":2}
+{"k":"mark","before":2,"label":"end_turn","turn":2}
+{"k":"mark","before":2,"label":"creature","turn":2,"hp":80,"moves":-615,"dead":false}
+{"k":"mark","before":2,"label":"turn","turn":3}
+{"k":"mark","before":2,"label":"end_turn","turn":3}
+{"k":"mark","before":2,"label":"creature","turn":3,"hp":80,"moves":-615,"dead":false}
+{"k":"mark","before":2,"label":"turn","turn":4}
+{"k":"mark","before":2,"label":"end_turn","turn":4}
+{"k":"mark","before":2,"label":"creature","turn":4,"hp":80,"moves":-615,"dead":false}
+{"k":"mark","before":2,"label":"turn","turn":5}
+{"k":"mark","before":2,"label":"end_turn","turn":5}
+{"k":"mark","before":2,"label":"creature","turn":5,"hp":80,"moves":-615,"dead":false}
+{"k":"footer","draws":2,"top":2,"bypass_steps":0,"unrecorded":0}

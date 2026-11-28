@@ -1,0 +1,11 @@
+# push items: rocks move to neighbouring push fields
+region 1 1
+ter all t_dirt
+item 6 6 rock
+item 6 6 rock
+item 6 6 2x4
+field 6 6 fd_push_items 1 1
+field 7 6 fd_push_items 1 1
+field 6 7 fd_push_items 1 1
+item 2 2 rock
+field 2 2 fd_push_items 1 1

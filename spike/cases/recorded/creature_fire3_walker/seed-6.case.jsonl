@@ -1,0 +1,149 @@
+{"k":"header","format":"bn-draws/1","baseline":"e7b4976","case":"creature_fire3_walker","seed":6,"turns":5,"layout":"creature_fire3_walker.layout","rule":"creature_in_field"}
+{"k":"mark","before":0,"label":"creature_def","id":"mon_zombie","monster":true,"flies":false,"digs":false,"digging":false,"armor_heat_torso":0,"tags":["NO_BREATHE","SEES","grp:Flesh","grp:FleshNVeg"]}
+{"k":"mark","before":0,"label":"creature","turn":0,"hp":80,"moves":0,"dead":false}
+{"k":"seed","before":0,"seed":6}
+{"k":"mark","before":0,"label":"turn","turn":1}
+{"k":"draw","i":0,"d":0,"fn":"rng","args":[10,20],"r":10,"pc":"0x3f72006","src":"src/map/map_field.cpp:651 (map::monster_in_field)"}
+{"k":"draw","i":1,"d":0,"fn":"rng","args":[6,26],"r":22,"pc":"0x3f72041","src":"src/map/map_field.cpp:654 (map::monster_in_field)"}
+{"k":"mark","before":2,"label":"call","fn":"Creature::add_effect","eff":"onfire","dur":22,"intensity":0,"pc":"0x421f235","src":"src/monster.cpp:2877 (monster::add_effect)"}
+{"k":"draw","i":2,"d":0,"fn":"rng","args":[5,10],"r":8,"pc":"0x422b513","src":"src/monster.cpp:? (monster::process_one_effect)"}
+{"k":"mark","before":3,"label":"ret","fn":"Creature::add_effect"}
+{"k":"mark","before":3,"label":"call","fn":"Creature::check_dead_state","pc":"0x3f72aeb","src":"src/map/map_field.cpp:796 (map::monster_in_field)"}
+{"k":"mark","before":3,"label":"ret","fn":"Creature::check_dead_state"}
+{"k":"mark","before":3,"label":"end_turn","turn":1}
+{"k":"mark","before":3,"label":"creature","turn":1,"hp":59,"moves":-40,"dead":false}
+{"k":"mark","before":3,"label":"turn","turn":2}
+{"k":"draw","i":3,"d":0,"fn":"rng","args":[10,20],"r":18,"pc":"0x3f72006","src":"src/map/map_field.cpp:651 (map::monster_in_field)"}
+{"k":"draw","i":4,"d":0,"fn":"rng","args":[10,42],"r":16,"pc":"0x3f72041","src":"src/map/map_field.cpp:654 (map::monster_in_field)"}
+{"k":"mark","before":5,"label":"call","fn":"Creature::add_effect","eff":"onfire","dur":16,"intensity":0,"pc":"0x421f235","src":"src/monster.cpp:2877 (monster::add_effect)"}
+{"k":"mark","before":5,"label":"ret","fn":"Creature::add_effect"}
+{"k":"mark","before":5,"label":"call","fn":"Creature::check_dead_state","pc":"0x3f72aeb","src":"src/map/map_field.cpp:796 (map::monster_in_field)"}
+{"k":"mark","before":5,"label":"ret","fn":"Creature::check_dead_state"}
+{"k":"mark","before":5,"label":"end_turn","turn":2}
+{"k":"mark","before":5,"label":"creature","turn":2,"hp":38,"moves":-80,"dead":false}
+{"k":"mark","before":5,"label":"turn","turn":3}
+{"k":"draw","i":5,"d":0,"fn":"rng","args":[10,20],"r":13,"pc":"0x3f72006","src":"src/map/map_field.cpp:651 (map::monster_in_field)"}
+{"k":"draw","i":6,"d":0,"fn":"rng","args":[8,32],"r":15,"pc":"0x3f72041","src":"src/map/map_field.cpp:654 (map::monster_in_field)"}
+{"k":"mark","before":7,"label":"call","fn":"Creature::add_effect","eff":"onfire","dur":15,"intensity":0,"pc":"0x421f235","src":"src/monster.cpp:2877 (monster::add_effect)"}
+{"k":"mark","before":7,"label":"ret","fn":"Creature::add_effect"}
+{"k":"mark","before":7,"label":"call","fn":"Creature::check_dead_state","pc":"0x3f72aeb","src":"src/map/map_field.cpp:796 (map::monster_in_field)"}
+{"k":"mark","before":7,"label":"ret","fn":"Creature::check_dead_state"}
+{"k":"mark","before":7,"label":"end_turn","turn":3}
+{"k":"mark","before":7,"label":"creature","turn":3,"hp":22,"moves":-120,"dead":false}
+{"k":"mark","before":7,"label":"turn","turn":4}
+{"k":"draw","i":7,"d":0,"fn":"rng","args":[10,20],"r":10,"pc":"0x3f72006","src":"src/map/map_field.cpp:651 (map::monster_in_field)"}
+{"k":"draw","i":8,"d":0,"fn":"rng","args":[6,26],"r":7,"pc":"0x3f72041","src":"src/map/map_field.cpp:654 (map::monster_in_field)"}
+{"k":"mark","before":9,"label":"call","fn":"Creature::add_effect","eff":"onfire","dur":7,"intensity":0,"pc":"0x421f235","src":"src/monster.cpp:2877 (monster::add_effect)"}
+{"k":"mark","before":9,"label":"ret","fn":"Creature::add_effect"}
+{"k":"mark","before":9,"label":"call","fn":"Creature::check_dead_state","pc":"0x3f72aeb","src":"src/map/map_field.cpp:796 (map::monster_in_field)"}
+{"k":"mark","before":9,"label":"ret","fn":"Creature::check_dead_state"}
+{"k":"mark","before":9,"label":"end_turn","turn":4}
+{"k":"mark","before":9,"label":"creature","turn":4,"hp":9,"moves":-160,"dead":false}
+{"k":"mark","before":9,"label":"turn","turn":5}
+{"k":"draw","i":9,"d":0,"fn":"rng","args":[10,20],"r":16,"pc":"0x3f72006","src":"src/map/map_field.cpp:651 (map::monster_in_field)"}
+{"k":"draw","i":10,"d":0,"fn":"rng","args":[9,38],"r":18,"pc":"0x3f72041","src":"src/map/map_field.cpp:654 (map::monster_in_field)"}
+{"k":"mark","before":11,"label":"call","fn":"Creature::add_effect","eff":"onfire","dur":18,"intensity":0,"pc":"0x421f235","src":"src/monster.cpp:2877 (monster::add_effect)"}
+{"k":"mark","before":11,"label":"ret","fn":"Creature::add_effect"}
+{"k":"mark","before":11,"label":"call","fn":"Creature::check_dead_state","pc":"0x3f72aeb","src":"src/map/map_field.cpp:796 (map::monster_in_field)"}
+{"k":"draw","i":11,"d":0,"fn":"rng","args":[0,99],"r":11,"pc":"0x3d1ce99","src":"src/item_group.cpp:732 (Item_group::create)"}
+{"k":"draw","i":12,"d":0,"fn":"rng","args":[0,99],"r":98,"pc":"0x3d1ce99","src":"src/item_group.cpp:732 (Item_group::create)"}
+{"k":"draw","i":13,"d":0,"fn":"rng","args":[0,99],"r":20,"pc":"0x3d1ce99","src":"src/item_group.cpp:732 (Item_group::create)"}
+{"k":"draw","i":14,"d":0,"fn":"rng","args":[0,99],"r":32,"pc":"0x3d1ce99","src":"src/item_group.cpp:732 (Item_group::create)"}
+{"k":"draw","i":15,"d":0,"fn":"rng","args":[0,99],"r":17,"pc":"0x3d1ce99","src":"src/item_group.cpp:732 (Item_group::create)"}
+{"k":"draw","i":16,"d":0,"fn":"rng","args":[0,529],"r":14,"pc":"0x3d1cf1f","src":"src/item_group.cpp:740 (Item_group::create)"}
+{"k":"draw","i":18,"d":1,"fn":"rng","args":[0,2],"r":0}
+{"k":"draw","i":17,"d":0,"fn":"one_in","args":[3],"r":true,"pc":"0x3d1816a","src":"src/item_group.cpp:82 (Single_item_creator::create_single)"}
+{"k":"draw","i":19,"d":0,"fn":"rng","args":[1,4],"r":2,"pc":"0x3d183c9","src":"src/item_group.cpp:481 (Item_modifier::modify)"}
+{"k":"draw","i":20,"d":0,"fn":"rng","args":[0,99],"r":40,"pc":"0x3d1ce99","src":"src/item_group.cpp:732 (Item_group::create)"}
+{"k":"draw","i":21,"d":0,"fn":"rng","args":[0,99],"r":50,"pc":"0x3d1ce99","src":"src/item_group.cpp:732 (Item_group::create)"}
+{"k":"draw","i":22,"d":0,"fn":"rng","args":[0,199],"r":24,"pc":"0x3d1cf1f","src":"src/item_group.cpp:740 (Item_group::create)"}
+{"k":"draw","i":23,"d":0,"fn":"rng","args":[0,99],"r":53,"pc":"0x3d1ce99","src":"src/item_group.cpp:732 (Item_group::create)"}
+{"k":"draw","i":24,"d":0,"fn":"rng","args":[0,99],"r":58,"pc":"0x3d1cf1f","src":"src/item_group.cpp:740 (Item_group::create)"}
+{"k":"draw","i":25,"d":0,"fn":"rng","args":[0,99],"r":7,"pc":"0x3d1ce99","src":"src/item_group.cpp:732 (Item_group::create)"}
+{"k":"draw","i":26,"d":0,"fn":"rng","args":[0,149],"r":24,"pc":"0x3d1cf1f","src":"src/item_group.cpp:740 (Item_group::create)"}
+{"k":"draw","i":28,"d":1,"fn":"rng","args":[0,2],"r":1}
+{"k":"draw","i":27,"d":0,"fn":"one_in","args":[3],"r":false,"pc":"0x3d1816a","src":"src/item_group.cpp:82 (Single_item_creator::create_single)"}
+{"k":"draw","i":29,"d":0,"fn":"rng","args":[0,99],"r":92,"pc":"0x3d1ce99","src":"src/item_group.cpp:732 (Item_group::create)"}
+{"k":"draw","i":30,"d":0,"fn":"rng","args":[0,199],"r":99,"pc":"0x3d1cf1f","src":"src/item_group.cpp:740 (Item_group::create)"}
+{"k":"draw","i":32,"d":1,"fn":"rng","args":[0,2],"r":0}
+{"k":"draw","i":31,"d":0,"fn":"one_in","args":[3],"r":true,"pc":"0x3d1816a","src":"src/item_group.cpp:82 (Single_item_creator::create_single)"}
+{"k":"draw","i":33,"d":0,"fn":"rng","args":[1,4],"r":2,"pc":"0x3d183c9","src":"src/item_group.cpp:481 (Item_modifier::modify)"}
+{"k":"draw","i":34,"d":0,"fn":"rng","args":[1,4],"r":3,"pc":"0x3d183c9","src":"src/item_group.cpp:481 (Item_modifier::modify)"}
+{"k":"draw","i":35,"d":0,"fn":"rng","args":[0,99],"r":57,"pc":"0x3d1ce99","src":"src/item_group.cpp:732 (Item_group::create)"}
+{"k":"draw","i":36,"d":0,"fn":"rng","args":[0,112],"r":32,"pc":"0x3d1cf1f","src":"src/item_group.cpp:740 (Item_group::create)"}
+{"k":"draw","i":37,"d":0,"fn":"rng","args":[0,99],"r":41,"pc":"0x3d1ce99","src":"src/item_group.cpp:732 (Item_group::create)"}
+{"k":"draw","i":38,"d":0,"fn":"rng","args":[0,706],"r":685,"pc":"0x3d1cf1f","src":"src/item_group.cpp:740 (Item_group::create)"}
+{"k":"draw","i":40,"d":1,"fn":"rng","args":[0,2],"r":2}
+{"k":"draw","i":39,"d":0,"fn":"one_in","args":[3],"r":false,"pc":"0x3d1816a","src":"src/item_group.cpp:82 (Single_item_creator::create_single)"}
+{"k":"draw","i":41,"d":0,"fn":"rng","args":[1,4],"r":3,"pc":"0x3d183c9","src":"src/item_group.cpp:481 (Item_modifier::modify)"}
+{"k":"draw","i":42,"d":0,"fn":"rng","args":[0,99],"r":94,"pc":"0x3d1ce99","src":"src/item_group.cpp:732 (Item_group::create)"}
+{"k":"draw","i":43,"d":0,"fn":"rng","args":[0,99],"r":19,"pc":"0x3d1ce99","src":"src/item_group.cpp:732 (Item_group::create)"}
+{"k":"draw","i":45,"d":1,"fn":"rng","args":[0,2],"r":1}
+{"k":"draw","i":44,"d":0,"fn":"one_in","args":[3],"r":false,"pc":"0x3d1816a","src":"src/item_group.cpp:82 (Single_item_creator::create_single)"}
+{"k":"draw","i":46,"d":0,"fn":"rng","args":[1,4],"r":4,"pc":"0x3d183c9","src":"src/item_group.cpp:481 (Item_modifier::modify)"}
+{"k":"draw","i":47,"d":0,"fn":"rng","args":[0,99],"r":33,"pc":"0x3d1ce99","src":"src/item_group.cpp:732 (Item_group::create)"}
+{"k":"draw","i":48,"d":0,"fn":"rng","args":[0,99],"r":52,"pc":"0x3d1ce99","src":"src/item_group.cpp:732 (Item_group::create)"}
+{"k":"draw","i":49,"d":0,"fn":"rng","args":[0,99],"r":90,"pc":"0x3d1ce99","src":"src/item_group.cpp:732 (Item_group::create)"}
+{"k":"draw","i":50,"d":0,"fn":"rng","args":[0,99],"r":43,"pc":"0x3d1ce99","src":"src/item_group.cpp:732 (Item_group::create)"}
+{"k":"draw","i":51,"d":0,"fn":"rng","args":[0,99],"r":78,"pc":"0x3d1ce99","src":"src/item_group.cpp:732 (Item_group::create)"}
+{"k":"draw","i":52,"d":0,"fn":"rng","args":[0,99],"r":30,"pc":"0x3d1ce99","src":"src/item_group.cpp:732 (Item_group::create)"}
+{"k":"draw","i":53,"d":0,"fn":"rng","args":[0,48],"r":31,"pc":"0x3d1cf1f","src":"src/item_group.cpp:740 (Item_group::create)"}
+{"k":"draw","i":54,"d":0,"fn":"rng","args":[0,99],"r":61,"pc":"0x3d1ce99","src":"src/item_group.cpp:732 (Item_group::create)"}
+{"k":"draw","i":55,"d":0,"fn":"rng","args":[0,99],"r":59,"pc":"0x3d1ce99","src":"src/item_group.cpp:732 (Item_group::create)"}
+{"k":"draw","i":56,"d":0,"fn":"rng","args":[0,99],"r":86,"pc":"0x3d1ce99","src":"src/item_group.cpp:732 (Item_group::create)"}
+{"k":"draw","i":57,"d":0,"fn":"rng","args":[0,99],"r":42,"pc":"0x3d1ce99","src":"src/item_group.cpp:732 (Item_group::create)"}
+{"k":"draw","i":58,"d":0,"fn":"rng","args":[0,99],"r":64,"pc":"0x3d1ce99","src":"src/item_group.cpp:732 (Item_group::create)"}
+{"k":"draw","i":59,"d":0,"fn":"rng","args":[0,99],"r":15,"pc":"0x3d1ce99","src":"src/item_group.cpp:732 (Item_group::create)"}
+{"k":"draw","i":61,"d":1,"fn":"rng","args":[0,2],"r":2}
+{"k":"draw","i":60,"d":0,"fn":"one_in","args":[3],"r":false,"pc":"0x3d1816a","src":"src/item_group.cpp:82 (Single_item_creator::create_single)"}
+{"k":"draw","i":62,"d":0,"fn":"rng","args":[0,0],"r":0,"pc":"0x3d183c9","src":"src/item_group.cpp:481 (Item_modifier::modify)"}
+{"k":"draw","i":63,"d":0,"fn":"rng","args":[0,15],"r":6,"pc":"0x3d187df","src":"src/item_group.cpp:540 (Item_modifier::modify)"}
+{"k":"draw","i":64,"d":0,"fn":"rng","args":[0,99],"r":45,"pc":"0x3d18b8f","src":"src/item_group.cpp:584 (Item_modifier::modify)"}
+{"k":"draw","i":65,"d":0,"fn":"rng","args":[0,99],"r":36,"pc":"0x3d18bfb","src":"src/item_group.cpp:586 (Item_modifier::modify)"}
+{"k":"draw","i":66,"d":0,"fn":"rng","args":[0,99],"r":42,"pc":"0x3d1ce99","src":"src/item_group.cpp:732 (Item_group::create)"}
+{"k":"draw","i":67,"d":0,"fn":"rng","args":[0,99],"r":2,"pc":"0x3d1ce99","src":"src/item_group.cpp:732 (Item_group::create)"}
+{"k":"draw","i":69,"d":1,"fn":"rng","args":[0,2],"r":0}
+{"k":"draw","i":68,"d":0,"fn":"one_in","args":[3],"r":true,"pc":"0x3d1816a","src":"src/item_group.cpp:82 (Single_item_creator::create_single)"}
+{"k":"draw","i":70,"d":0,"fn":"rng","args":[1,4],"r":4,"pc":"0x3d183c9","src":"src/item_group.cpp:481 (Item_modifier::modify)"}
+{"k":"draw","i":71,"d":0,"fn":"rng","args":[0,50],"r":46,"pc":"0x3d187df","src":"src/item_group.cpp:540 (Item_modifier::modify)"}
+{"k":"draw","i":72,"d":0,"fn":"rng","args":[0,99],"r":96,"pc":"0x3d18b8f","src":"src/item_group.cpp:584 (Item_modifier::modify)"}
+{"k":"draw","i":73,"d":0,"fn":"rng","args":[0,99],"r":59,"pc":"0x3d18bfb","src":"src/item_group.cpp:586 (Item_modifier::modify)"}
+{"k":"draw","i":74,"d":0,"fn":"rng","args":[0,99],"r":54,"pc":"0x3d1ce99","src":"src/item_group.cpp:732 (Item_group::create)"}
+{"k":"draw","i":75,"d":0,"fn":"rng","args":[0,99],"r":68,"pc":"0x3d1ce99","src":"src/item_group.cpp:732 (Item_group::create)"}
+{"k":"draw","i":76,"d":0,"fn":"rng","args":[0,99],"r":44,"pc":"0x3d1ce99","src":"src/item_group.cpp:732 (Item_group::create)"}
+{"k":"draw","i":77,"d":0,"fn":"rng","args":[0,99],"r":0,"pc":"0x3d1ce99","src":"src/item_group.cpp:732 (Item_group::create)"}
+{"k":"draw","i":79,"d":1,"fn":"rng","args":[0,2],"r":0}
+{"k":"draw","i":78,"d":0,"fn":"one_in","args":[3],"r":true,"pc":"0x3d1816a","src":"src/item_group.cpp:82 (Single_item_creator::create_single)"}
+{"k":"draw","i":80,"d":0,"fn":"rng","args":[0,99],"r":66,"pc":"0x3d1ce99","src":"src/item_group.cpp:732 (Item_group::create)"}
+{"k":"draw","i":81,"d":0,"fn":"rng","args":[0,99],"r":48,"pc":"0x3d1ce99","src":"src/item_group.cpp:732 (Item_group::create)"}
+{"k":"draw","i":82,"d":0,"fn":"rng","args":[0,99],"r":17,"pc":"0x3d1ce99","src":"src/item_group.cpp:732 (Item_group::create)"}
+{"k":"draw","i":83,"d":0,"fn":"rng","args":[0,99],"r":78,"pc":"0x3d1ce99","src":"src/item_group.cpp:732 (Item_group::create)"}
+{"k":"draw","i":84,"d":0,"fn":"rng","args":[0,99],"r":64,"pc":"0x3d1ce99","src":"src/item_group.cpp:732 (Item_group::create)"}
+{"k":"draw","i":85,"d":0,"fn":"rng","args":[0,99],"r":30,"pc":"0x3d1ce99","src":"src/item_group.cpp:732 (Item_group::create)"}
+{"k":"draw","i":86,"d":0,"fn":"rng","args":[0,99],"r":56,"pc":"0x3d1ce99","src":"src/item_group.cpp:732 (Item_group::create)"}
+{"k":"draw","i":87,"d":0,"fn":"rng","args":[0,99],"r":62,"pc":"0x3d1ce99","src":"src/item_group.cpp:732 (Item_group::create)"}
+{"k":"draw","i":88,"d":0,"fn":"rng","args":[0,99],"r":96,"pc":"0x3d1ce99","src":"src/item_group.cpp:732 (Item_group::create)"}
+{"k":"draw","i":89,"d":0,"fn":"rng","args":[0,99],"r":75,"pc":"0x3d1ce99","src":"src/item_group.cpp:732 (Item_group::create)"}
+{"k":"draw","i":90,"d":0,"fn":"rng","args":[0,0],"r":0,"pc":"0x3d183c9","src":"src/item_group.cpp:481 (Item_modifier::modify)"}
+{"k":"draw","i":91,"d":0,"fn":"rng","args":[0,99],"r":13,"pc":"0x3d18b8f","src":"src/item_group.cpp:584 (Item_modifier::modify)"}
+{"k":"draw","i":92,"d":0,"fn":"rng","args":[0,99],"r":20,"pc":"0x3d18bfb","src":"src/item_group.cpp:586 (Item_modifier::modify)"}
+{"k":"draw","i":93,"d":0,"fn":"rng","args":[0,0],"r":0,"pc":"0x3d183c9","src":"src/item_group.cpp:481 (Item_modifier::modify)"}
+{"k":"draw","i":94,"d":0,"fn":"rng","args":[0,99],"r":41,"pc":"0x3d18b8f","src":"src/item_group.cpp:584 (Item_modifier::modify)"}
+{"k":"draw","i":95,"d":0,"fn":"rng","args":[0,99],"r":35,"pc":"0x3d18bfb","src":"src/item_group.cpp:586 (Item_modifier::modify)"}
+{"k":"draw","i":96,"d":0,"fn":"rng","args":[0,0],"r":0,"pc":"0x3d183c9","src":"src/item_group.cpp:481 (Item_modifier::modify)"}
+{"k":"draw","i":97,"d":0,"fn":"rng","args":[0,99],"r":33,"pc":"0x3d1ce99","src":"src/item_group.cpp:732 (Item_group::create)"}
+{"k":"draw","i":98,"d":0,"fn":"rng_float","args":[0,1],"r":0.8395707717955729,"pc":"0x422980e","src":"src/monster.cpp:3771 (__gnu_cxx::__normal_iterator<detached_ptr<item>*, std::vector<detached_ptr<item>, std::allocator<detached_ptr<item> > > > std::__find_if<__gnu_cxx::__normal_iterator<detached_ptr<item>*, std::vector<detached_ptr<item>, std::allocator<detached_ptr<item> > > >, monster::drop_items_on_death)"}
+{"k":"draw","i":99,"d":0,"fn":"rng_float","args":[0,1],"r":0.07979806852751603,"pc":"0x422987f","src":"src/monster.cpp:3771 (__gnu_cxx::__normal_iterator<detached_ptr<item>*, std::vector<detached_ptr<item>, std::allocator<detached_ptr<item> > > > std::__find_if<__gnu_cxx::__normal_iterator<detached_ptr<item>*, std::vector<detached_ptr<item>, std::allocator<detached_ptr<item> > > >, monster::drop_items_on_death)"}
+{"k":"draw","i":100,"d":0,"fn":"rng_float","args":[0,1],"r":0.07603787181190902,"pc":"0x42298f0","src":"src/monster.cpp:3771 (__gnu_cxx::__normal_iterator<detached_ptr<item>*, std::vector<detached_ptr<item>, std::allocator<detached_ptr<item> > > > std::__find_if<__gnu_cxx::__normal_iterator<detached_ptr<item>*, std::vector<detached_ptr<item>, std::allocator<detached_ptr<item> > > >, monster::drop_items_on_death)"}
+{"k":"draw","i":101,"d":0,"fn":"rng_float","args":[0,1],"r":0.04915985173411885,"pc":"0x422995d","src":"src/monster.cpp:3771 (__gnu_cxx::__normal_iterator<detached_ptr<item>*, std::vector<detached_ptr<item>, std::allocator<detached_ptr<item> > > > std::__find_if<__gnu_cxx::__normal_iterator<detached_ptr<item>*, std::vector<detached_ptr<item>, std::allocator<detached_ptr<item> > > >, monster::drop_items_on_death)"}
+{"k":"draw","i":102,"d":0,"fn":"rng_float","args":[0,1],"r":0.4933312301445232,"pc":"0x422980e","src":"src/monster.cpp:3771 (__gnu_cxx::__normal_iterator<detached_ptr<item>*, std::vector<detached_ptr<item>, std::allocator<detached_ptr<item> > > > std::__find_if<__gnu_cxx::__normal_iterator<detached_ptr<item>*, std::vector<detached_ptr<item>, std::allocator<detached_ptr<item> > > >, monster::drop_items_on_death)"}
+{"k":"draw","i":103,"d":0,"fn":"rng_float","args":[0,1],"r":0.8090844525790799,"pc":"0x422987f","src":"src/monster.cpp:3771 (__gnu_cxx::__normal_iterator<detached_ptr<item>*, std::vector<detached_ptr<item>, std::allocator<detached_ptr<item> > > > std::__find_if<__gnu_cxx::__normal_iterator<detached_ptr<item>*, std::vector<detached_ptr<item>, std::allocator<detached_ptr<item> > > >, monster::drop_items_on_death)"}
+{"k":"draw","i":104,"d":0,"fn":"rng_float","args":[0,1],"r":0.07010314356480174,"pc":"0x42298f0","src":"src/monster.cpp:3771 (__gnu_cxx::__normal_iterator<detached_ptr<item>*, std::vector<detached_ptr<item>, std::allocator<detached_ptr<item> > > > std::__find_if<__gnu_cxx::__normal_iterator<detached_ptr<item>*, std::vector<detached_ptr<item>, std::allocator<detached_ptr<item> > > >, monster::drop_items_on_death)"}
+{"k":"draw","i":105,"d":0,"fn":"rng_float","args":[0,1],"r":0.4307702124526879,"pc":"0x422995d","src":"src/monster.cpp:3771 (__gnu_cxx::__normal_iterator<detached_ptr<item>*, std::vector<detached_ptr<item>, std::allocator<detached_ptr<item> > > > std::__find_if<__gnu_cxx::__normal_iterator<detached_ptr<item>*, std::vector<detached_ptr<item>, std::allocator<detached_ptr<item> > > >, monster::drop_items_on_death)"}
+{"k":"draw","i":107,"d":1,"fn":"rng","args":[0,19],"r":16}
+{"k":"draw","i":106,"d":0,"fn":"one_in","args":[20],"r":false,"pc":"0x3c08916","src":"src/item.cpp:592 (item::make_corpse)"}
+{"k":"draw","i":108,"d":0,"fn":"rng","args":[0,917],"r":182,"pc":"0x41d0c99","src":"src/mondeath.cpp:239 (mdeath::splatter)"}
+{"k":"mark","before":109,"label":"ret","fn":"Creature::check_dead_state"}
+{"k":"mark","before":109,"label":"end_turn","turn":5}
+{"k":"mark","before":109,"label":"creature","turn":5,"hp":-10,"moves":-200,"dead":true}
+{"k":"footer","draws":109,"top":100,"bypass_steps":0,"unrecorded":0}

@@ -1,0 +1,9 @@
+# fire burning items (item::burn), non-flammable terrain; items next door
+region 1 1
+ter all t_dirt
+item 6 6 2x4
+item 6 6 paper
+item 6 6 log
+item 6 6 rock
+item 7 6 paper
+field 6 6 fd_fire 2 1

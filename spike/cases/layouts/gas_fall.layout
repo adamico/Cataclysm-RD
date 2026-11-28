@@ -1,0 +1,7 @@
+# gas falls to the z-level below first
+region 1 1
+zlevels -1 0
+ter all t_dirt
+field 6 6 fd_smoke 3 1 0
+field 7 7 fd_toxic_gas 3 1 0
+field 7 7 fd_toxic_gas 1 1 -1

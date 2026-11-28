@@ -254,6 +254,9 @@ pub struct StubItems {
     pub now: Turns,
     pub calls: Vec<ItemCall>,
     pending: HashMap<u64, StubItem>,
+    /// Burn products of the last replayed `item::burn` (handed out by `burnproducts`).
+    products: Vec<StubItem>,
+    next_id: u64,
 }
 
 impl StubItems {
@@ -273,12 +276,57 @@ impl Items for StubItems {
     fn weight_g(&self, at: SubTile, i: usize) -> i64 {
         self.list(at)[i].weight_g
     }
-    fn burn(&mut self, at: SubTile, i: usize, frd: &mut FireData, _dice: &mut dyn Dice) -> bool {
+    fn burn(&mut self, at: SubTile, i: usize, frd: &mut FireData, dice: &mut dyn Dice) -> bool {
         self.calls.push(ItemCall::Burn { at, index: i, frd: *frd });
+        // Replay: BN's item::burn ran on the other side; check what Fields
+        // handed it and take its results (and its draws) from the case.
+        if let Some(fc) = dice.foreign("item::burn") {
+            let it = &mut self.tiles.get_mut(&at).unwrap()[i];
+            // fire_data's sums are floats, recorded with %.9g: compare as f32.
+            let got = (it.weight_g as f64, frd.fire_intensity as f64, frd.contained as i32 as f64, frd.fuel_produced, frd.smoke_produced);
+            let want = (
+                fc.arg("weight_g"),
+                fc.arg("fire_intensity"),
+                fc.arg("contained"),
+                fc.arg("fuel_produced") as f32,
+                fc.arg("smoke_produced") as f32,
+            );
+            assert_eq!(got, want, "item::burn inputs (weight, fire_intensity, contained, fuel, smoke) at {at:?} #{i}");
+            // What BN's create_burnproducts will push for this burn.
+            self.products = fc
+                .list
+                .iter()
+                .map(|p| {
+                    let get = |k: &str| p.iter().find(|(n, _)| n == k).unwrap().1;
+                    self.next_id += 1;
+                    StubItem {
+                        id: 1_000_000 + self.next_id,
+                        rock: false,
+                        flammable: get("flammable") != 0.0,
+                        weight_g: get("weight_g") as i64,
+                        birthday: self.now,
+                    }
+                })
+                .collect();
+            let it = &mut self.tiles.get_mut(&at).unwrap()[i];
+            frd.fuel_produced = fc.ret("fuel_produced") as f32;
+            frd.smoke_produced = fc.ret("smoke_produced") as f32;
+            let destroyed = fc.ret("destroyed") != 0.0;
+            if !destroyed {
+                it.weight_g = fc.ret("weight_g") as i64;
+            }
+            return destroyed;
+        }
         false
     }
-    fn burnproducts(&self, _at: SubTile, _i: usize, _burned_g: i64) -> Vec<DetachedItem> {
-        Vec::new()
+    /// Replay: the products BN recorded for the last burn. Live: none.
+    fn burnproducts(&mut self, _at: SubTile, _i: usize, _burned_g: i64) -> Vec<DetachedItem> {
+        let mut out = vec![];
+        for it in std::mem::take(&mut self.products) {
+            out.push(DetachedItem(it.id));
+            self.pending.insert(it.id, it);
+        }
+        out
     }
     fn take_removable_contents(&mut self, _at: SubTile, _i: usize) -> Vec<DetachedItem> {
         Vec::new()

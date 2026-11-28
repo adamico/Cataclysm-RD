@@ -1,0 +1,22 @@
+# Fields spike session 3: a soak layout with many draws per turn (no items, no
+# creatures: those need stubs that only replay, not simulate).
+region 3 3
+ter all t_floor
+ter 16 10 t_wall
+ter 16 11 t_wall
+ter 16 12 t_wall
+ter 16 13 t_wall
+ter 20 20 t_wood_stairs_down
+ter 21 20 t_wood_stairs_down
+field 6 6 fd_fire 3 1
+field 30 6 fd_fire 2 -200
+field 20 20 fd_fire 3 1
+field 17 11 fd_smoke 3 1
+field 18 18 fd_toxic_gas 3 1
+field 12 24 fd_tear_gas 3 1
+field 24 30 fd_nuke_gas 3 1
+field 5 30 fd_bees 3 1
+field 30 30 fd_electricity 3 1
+field 28 14 fd_shock_vent 1 1
+field 8 18 fd_gas_vent 3 1
+field 23 18 fd_smoke 3 1

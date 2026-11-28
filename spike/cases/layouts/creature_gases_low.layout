@@ -1,0 +1,8 @@
+# creature case: triffid in intensity-1 tear gas, relax gas, nuke gas, smoke
+region 1 1
+ter all t_dirt
+field 6 6 fd_tear_gas 1 1
+field 6 6 fd_relax_gas 1 1
+field 6 6 fd_nuke_gas 1 1
+field 6 6 fd_smoke 1 1
+monster 6 6 mon_triffid

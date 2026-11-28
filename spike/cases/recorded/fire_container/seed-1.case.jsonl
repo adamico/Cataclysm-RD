@@ -1,0 +1,88 @@
+{"k":"header","format":"bn-draws/1","baseline":"e7b4976","case":"fire_container","seed":1,"turns":5,"layout":"fire_container.layout"}
+{"k":"mark","before":0,"label":"ter_def","id":"t_dirt","movecost":2,"flags":[]}
+{"k":"mark","before":0,"label":"ter_def","id":"t_grass","movecost":2,"flags":[]}
+{"k":"mark","before":0,"label":"ter_def","id":"t_null","movecost":0,"flags":[]}
+{"k":"mark","before":0,"label":"ter_def","id":"t_pit","movecost":10,"flags":[]}
+{"k":"mark","before":0,"label":"furn_def","id":"f_ash","movecost":0,"flags":["SEALED"]}
+{"k":"mark","before":0,"label":"furn_def","id":"f_fireplace","movecost":2,"flags":["FIRE_CONTAINER"]}
+{"k":"mark","before":0,"label":"furn_def","id":"f_null","movecost":0,"flags":[]}
+{"k":"mark","before":0,"label":"item_def","x":6,"y":6,"z":0,"index":0,"itype":"2x4","weight_g":2200,"flammable":true,"rock":false}
+{"k":"mark","before":0,"label":"item_def","x":6,"y":6,"z":0,"index":1,"itype":"stick","weight_g":1700,"flammable":true,"rock":false}
+{"k":"mark","before":0,"label":"tile","turn":0,"x":6,"y":6,"z":0,"ter":"t_grass","furn":"f_fireplace","rad":0,"items":2}
+{"k":"seed","before":0,"seed":1}
+{"k":"mark","before":0,"label":"turn","turn":1}
+{"k":"mark","before":0,"label":"submap","index":0}
+{"k":"mark","before":0,"label":"call","fn":"item::burn","itype":"2x4","weight_g":2200,"fire_intensity":3,"contained":true,"fuel_produced":0,"smoke_produced":0}
+{"k":"draw","i":2,"d":2,"fn":"rng_float","args":[0,1],"r":0.13179519999374012}
+{"k":"draw","i":1,"d":1,"fn":"x_in_y","args":[0.0005681818181818182,1],"r":false}
+{"k":"draw","i":0,"d":0,"fn":"roll_remainder","args":[0.0005681818181818182],"r":0,"pc":"0x3c5de4b","src":"src/item.cpp:9438 (item::burn)"}
+{"k":"mark","before":3,"label":"ret","fn":"item::burn","destroyed":false,"weight_g":2200,"fuel_produced":3,"smoke_produced":1,"n_products":0,"products":[]}
+{"k":"mark","before":3,"label":"call","fn":"item::burn","itype":"stick","weight_g":1700,"fire_intensity":3,"contained":true,"fuel_produced":3,"smoke_produced":1}
+{"k":"draw","i":5,"d":2,"fn":"rng_float","args":[0,1],"r":0.4595476852416549}
+{"k":"draw","i":4,"d":1,"fn":"x_in_y","args":[0.002,1],"r":false}
+{"k":"draw","i":3,"d":0,"fn":"roll_remainder","args":[0.002],"r":0,"pc":"0x3c5de4b","src":"src/item.cpp:9438 (item::burn)"}
+{"k":"mark","before":6,"label":"ret","fn":"item::burn","destroyed":false,"weight_g":1700,"fuel_produced":6,"smoke_produced":2,"n_products":0,"products":[]}
+{"k":"draw","i":6,"d":0,"fn":"roll_remainder","args":[6],"r":6,"pc":"0x3f741ff","src":"src/map/map_field.cpp:1139 (process_fields_in_submap) via src/rng.h:65"}
+{"k":"mark","before":7,"label":"end_turn","turn":1}
+{"k":"mark","before":7,"label":"tile","turn":1,"x":6,"y":6,"z":0,"ter":"t_grass","furn":"f_fireplace","rad":0,"items":2}
+{"k":"mark","before":7,"label":"turn","turn":2}
+{"k":"mark","before":7,"label":"submap","index":0}
+{"k":"mark","before":7,"label":"call","fn":"item::burn","itype":"2x4","weight_g":2200,"fire_intensity":3,"contained":true,"fuel_produced":0,"smoke_produced":0}
+{"k":"draw","i":9,"d":2,"fn":"rng_float","args":[0,1],"r":0.21938767736198328}
+{"k":"draw","i":8,"d":1,"fn":"x_in_y","args":[0.0005681818181818182,1],"r":false}
+{"k":"draw","i":7,"d":0,"fn":"roll_remainder","args":[0.0005681818181818182],"r":0,"pc":"0x3c5de4b","src":"src/item.cpp:9438 (item::burn)"}
+{"k":"mark","before":10,"label":"ret","fn":"item::burn","destroyed":false,"weight_g":2200,"fuel_produced":3,"smoke_produced":1,"n_products":0,"products":[]}
+{"k":"mark","before":10,"label":"call","fn":"item::burn","itype":"stick","weight_g":1700,"fire_intensity":3,"contained":true,"fuel_produced":3,"smoke_produced":1}
+{"k":"draw","i":12,"d":2,"fn":"rng_float","args":[0,1],"r":0.6801932178548241}
+{"k":"draw","i":11,"d":1,"fn":"x_in_y","args":[0.002,1],"r":false}
+{"k":"draw","i":10,"d":0,"fn":"roll_remainder","args":[0.002],"r":0,"pc":"0x3c5de4b","src":"src/item.cpp:9438 (item::burn)"}
+{"k":"mark","before":13,"label":"ret","fn":"item::burn","destroyed":false,"weight_g":1700,"fuel_produced":6,"smoke_produced":2,"n_products":0,"products":[]}
+{"k":"draw","i":13,"d":0,"fn":"roll_remainder","args":[6],"r":6,"pc":"0x3f741ff","src":"src/map/map_field.cpp:1139 (process_fields_in_submap) via src/rng.h:65"}
+{"k":"mark","before":14,"label":"end_turn","turn":2}
+{"k":"mark","before":14,"label":"tile","turn":2,"x":6,"y":6,"z":0,"ter":"t_grass","furn":"f_fireplace","rad":0,"items":2}
+{"k":"mark","before":14,"label":"turn","turn":3}
+{"k":"mark","before":14,"label":"submap","index":0}
+{"k":"mark","before":14,"label":"call","fn":"item::burn","itype":"2x4","weight_g":2200,"fire_intensity":3,"contained":true,"fuel_produced":0,"smoke_produced":0}
+{"k":"draw","i":16,"d":2,"fn":"rng_float","args":[0,1],"r":0.9365220390933416}
+{"k":"draw","i":15,"d":1,"fn":"x_in_y","args":[0.0005681818181818182,1],"r":false}
+{"k":"draw","i":14,"d":0,"fn":"roll_remainder","args":[0.0005681818181818182],"r":0,"pc":"0x3c5de4b","src":"src/item.cpp:9438 (item::burn)"}
+{"k":"mark","before":17,"label":"ret","fn":"item::burn","destroyed":false,"weight_g":2200,"fuel_produced":3,"smoke_produced":1,"n_products":0,"products":[]}
+{"k":"mark","before":17,"label":"call","fn":"item::burn","itype":"stick","weight_g":1700,"fire_intensity":3,"contained":true,"fuel_produced":3,"smoke_produced":1}
+{"k":"draw","i":19,"d":2,"fn":"rng_float","args":[0,1],"r":0.5204328414487135}
+{"k":"draw","i":18,"d":1,"fn":"x_in_y","args":[0.002,1],"r":false}
+{"k":"draw","i":17,"d":0,"fn":"roll_remainder","args":[0.002],"r":0,"pc":"0x3c5de4b","src":"src/item.cpp:9438 (item::burn)"}
+{"k":"mark","before":20,"label":"ret","fn":"item::burn","destroyed":false,"weight_g":1700,"fuel_produced":6,"smoke_produced":2,"n_products":0,"products":[]}
+{"k":"draw","i":20,"d":0,"fn":"roll_remainder","args":[6],"r":6,"pc":"0x3f741ff","src":"src/map/map_field.cpp:1139 (process_fields_in_submap) via src/rng.h:65"}
+{"k":"mark","before":21,"label":"end_turn","turn":3}
+{"k":"mark","before":21,"label":"tile","turn":3,"x":6,"y":6,"z":0,"ter":"t_grass","furn":"f_fireplace","rad":0,"items":2}
+{"k":"mark","before":21,"label":"turn","turn":4}
+{"k":"mark","before":21,"label":"submap","index":0}
+{"k":"mark","before":21,"label":"call","fn":"item::burn","itype":"2x4","weight_g":2200,"fire_intensity":3,"contained":true,"fuel_produced":0,"smoke_produced":0}
+{"k":"draw","i":23,"d":2,"fn":"rng_float","args":[0,1],"r":0.03463976619379905}
+{"k":"draw","i":22,"d":1,"fn":"x_in_y","args":[0.0005681818181818182,1],"r":false}
+{"k":"draw","i":21,"d":0,"fn":"roll_remainder","args":[0.0005681818181818182],"r":0,"pc":"0x3c5de4b","src":"src/item.cpp:9438 (item::burn)"}
+{"k":"mark","before":24,"label":"ret","fn":"item::burn","destroyed":false,"weight_g":2200,"fuel_produced":3,"smoke_produced":1,"n_products":0,"products":[]}
+{"k":"mark","before":24,"label":"call","fn":"item::burn","itype":"stick","weight_g":1700,"fire_intensity":3,"contained":true,"fuel_produced":3,"smoke_produced":1}
+{"k":"draw","i":26,"d":2,"fn":"rng_float","args":[0,1],"r":0.5307367874423871}
+{"k":"draw","i":25,"d":1,"fn":"x_in_y","args":[0.002,1],"r":false}
+{"k":"draw","i":24,"d":0,"fn":"roll_remainder","args":[0.002],"r":0,"pc":"0x3c5de4b","src":"src/item.cpp:9438 (item::burn)"}
+{"k":"mark","before":27,"label":"ret","fn":"item::burn","destroyed":false,"weight_g":1700,"fuel_produced":6,"smoke_produced":2,"n_products":0,"products":[]}
+{"k":"draw","i":27,"d":0,"fn":"roll_remainder","args":[6],"r":6,"pc":"0x3f741ff","src":"src/map/map_field.cpp:1139 (process_fields_in_submap) via src/rng.h:65"}
+{"k":"mark","before":28,"label":"end_turn","turn":4}
+{"k":"mark","before":28,"label":"tile","turn":4,"x":6,"y":6,"z":0,"ter":"t_grass","furn":"f_fireplace","rad":0,"items":2}
+{"k":"mark","before":28,"label":"turn","turn":5}
+{"k":"mark","before":28,"label":"submap","index":0}
+{"k":"mark","before":28,"label":"call","fn":"item::burn","itype":"2x4","weight_g":2200,"fire_intensity":3,"contained":true,"fuel_produced":0,"smoke_produced":0}
+{"k":"draw","i":30,"d":2,"fn":"rng_float","args":[0,1],"r":0.0077132509906011615}
+{"k":"draw","i":29,"d":1,"fn":"x_in_y","args":[0.0005681818181818182,1],"r":false}
+{"k":"draw","i":28,"d":0,"fn":"roll_remainder","args":[0.0005681818181818182],"r":0,"pc":"0x3c5de4b","src":"src/item.cpp:9438 (item::burn)"}
+{"k":"mark","before":31,"label":"ret","fn":"item::burn","destroyed":false,"weight_g":2200,"fuel_produced":3,"smoke_produced":1,"n_products":0,"products":[]}
+{"k":"mark","before":31,"label":"call","fn":"item::burn","itype":"stick","weight_g":1700,"fire_intensity":3,"contained":true,"fuel_produced":3,"smoke_produced":1}
+{"k":"draw","i":33,"d":2,"fn":"rng_float","args":[0,1],"r":0.06697304386436176}
+{"k":"draw","i":32,"d":1,"fn":"x_in_y","args":[0.002,1],"r":false}
+{"k":"draw","i":31,"d":0,"fn":"roll_remainder","args":[0.002],"r":0,"pc":"0x3c5de4b","src":"src/item.cpp:9438 (item::burn)"}
+{"k":"mark","before":34,"label":"ret","fn":"item::burn","destroyed":false,"weight_g":1700,"fuel_produced":6,"smoke_produced":2,"n_products":0,"products":[]}
+{"k":"draw","i":34,"d":0,"fn":"roll_remainder","args":[6],"r":6,"pc":"0x3f741ff","src":"src/map/map_field.cpp:1139 (process_fields_in_submap) via src/rng.h:65"}
+{"k":"mark","before":35,"label":"end_turn","turn":5}
+{"k":"mark","before":35,"label":"tile","turn":5,"x":6,"y":6,"z":0,"ter":"t_grass","furn":"f_fireplace","rad":0,"items":2}
+{"k":"footer","draws":35,"top":15,"bypass_steps":0,"unrecorded":0}

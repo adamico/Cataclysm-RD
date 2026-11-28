@@ -1,0 +1,10 @@
+# fire next to FLAMMABLE_HARD floor holding paper: the "flammable items && one_in(5)" ignition
+region 1 1
+ter all t_floor
+item 5 6 paper
+item 7 6 paper
+item 6 5 paper
+item 6 7 paper
+item 5 5 paper
+item 7 7 paper
+field 6 6 fd_fire 2 1

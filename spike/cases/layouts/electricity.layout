@@ -1,0 +1,10 @@
+# electricity: arcing out of an impassable tile, grounding next to walls, free spread
+region 1 1
+ter all t_dirt
+ter 3 3 t_wall
+ter 8 8 t_wall
+ter 9 8 t_wall
+field 3 3 fd_electricity 3 1
+field 9 9 fd_electricity 3 1
+field 5 10 fd_electricity 3 1
+field 1 9 fd_electricity 1 1

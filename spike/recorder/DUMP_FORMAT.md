@@ -44,3 +44,11 @@ Rules a matching writer must follow:
   `mapbuffer::for_each_simulated_submap`.
 - The engine is seeded with `rng_set_engine_seed(seed)` after the layout is
   built and before turn 1.
+
+## Session 3 additions
+
+- **Multi-z regions** (`zlevels lo hi` in the layout): every `f` line gets `"z":<z>` right after `"y"`, and lines sort by `(z, y, x, t)`. Single-z regions are written exactly as before (the session 1 sample still matches byte for byte).
+- **Submap order** with z-levels: z ascending, then row-major.
+- **Creature cases** dump the layout's area of the bubble map (`g->m`) from bubble tile (48, 48); same format.
+- `--dump-every` writes a snapshot after every turn, not just turn 0 and the last.
+- The Rust writer is `spike/rust/fields_harness/src/dump.rs`; `smoke_dump_is_byte_exact` checks it against `spike/samples/smoke-seed-42.dump.jsonl`.

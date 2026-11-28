@@ -1,0 +1,12 @@
+[package]
+name = "fields_harness"
+version = "0.0.0"
+edition.workspace = true
+publish.workspace = true
+
+[dependencies]
+bn_dice = { path = "../bn_dice" }
+fields = { path = "../fields" }
+bubble_stub = { path = "../bubble_stub" }
+combat_stub = { path = "../combat_stub" }
+serde_json = { version = "1", features = ["float_roundtrip"] }

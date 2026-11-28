@@ -1,0 +1,5 @@
+# fire on a submap corner: flashpoint and spread across four submaps
+region 2 2
+ter all t_grass
+field 11 11 fd_fire 3 -20
+field 12 12 fd_fire 1 1

@@ -32,6 +32,17 @@ dependencies = [
 ]
 
 [[package]]
+name = "fields_harness"
+version = "0.0.0"
+dependencies = [
+ "bn_dice",
+ "bubble_stub",
+ "combat_stub",
+ "fields",
+ "serde_json",
+]
+
+[[package]]
 name = "itoa"
 version = "1.0.19"
 source = "registry+https://github.com/rust-lang/crates.io-index"

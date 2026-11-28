@@ -1,0 +1,52 @@
+{"k":"header","format":"bn-draws/1","baseline":"e7b4976","case":"push_items","seed":5,"turns":5,"layout":"push_items.layout"}
+{"k":"mark","before":0,"label":"ter_def","id":"t_dirt","movecost":2,"flags":[]}
+{"k":"mark","before":0,"label":"ter_def","id":"t_null","movecost":0,"flags":[]}
+{"k":"mark","before":0,"label":"ter_def","id":"t_pit","movecost":10,"flags":[]}
+{"k":"mark","before":0,"label":"furn_def","id":"f_ash","movecost":0,"flags":["SEALED"]}
+{"k":"mark","before":0,"label":"furn_def","id":"f_null","movecost":0,"flags":[]}
+{"k":"mark","before":0,"label":"item_def","x":2,"y":2,"z":0,"index":0,"itype":"rock","weight_g":500,"flammable":false,"rock":true}
+{"k":"mark","before":0,"label":"item_def","x":6,"y":6,"z":0,"index":0,"itype":"rock","weight_g":500,"flammable":false,"rock":true}
+{"k":"mark","before":0,"label":"item_def","x":6,"y":6,"z":0,"index":1,"itype":"rock","weight_g":500,"flammable":false,"rock":true}
+{"k":"mark","before":0,"label":"item_def","x":6,"y":6,"z":0,"index":2,"itype":"2x4","weight_g":2200,"flammable":true,"rock":false}
+{"k":"mark","before":0,"label":"tile","turn":0,"x":2,"y":2,"z":0,"ter":"t_dirt","furn":"f_null","rad":0,"items":1}
+{"k":"mark","before":0,"label":"tile","turn":0,"x":6,"y":6,"z":0,"ter":"t_dirt","furn":"f_null","rad":0,"items":3}
+{"k":"seed","before":0,"seed":5}
+{"k":"mark","before":0,"label":"turn","turn":1}
+{"k":"mark","before":0,"label":"submap","index":0}
+{"k":"mark","before":0,"label":"end_turn","turn":1}
+{"k":"mark","before":0,"label":"tile","turn":1,"x":2,"y":2,"z":0,"ter":"t_dirt","furn":"f_null","rad":0,"items":1}
+{"k":"mark","before":0,"label":"tile","turn":1,"x":6,"y":6,"z":0,"ter":"t_dirt","furn":"f_null","rad":0,"items":3}
+{"k":"mark","before":0,"label":"turn","turn":2}
+{"k":"mark","before":0,"label":"submap","index":0}
+{"k":"draw","i":0,"d":0,"fn":"rng","args":[0,1],"r":0,"pc":"0x3f784ad","src":"src/rng.h:137 (point random_entry<std::vector<point, std::allocator<point> >, point>)"}
+{"k":"draw","i":1,"d":0,"fn":"rng","args":[0,1],"r":1,"pc":"0x3f784ad","src":"src/rng.h:137 (point random_entry<std::vector<point, std::allocator<point> >, point>)"}
+{"k":"mark","before":2,"label":"end_turn","turn":2}
+{"k":"mark","before":2,"label":"tile","turn":2,"x":2,"y":2,"z":0,"ter":"t_dirt","furn":"f_null","rad":0,"items":1}
+{"k":"mark","before":2,"label":"tile","turn":2,"x":6,"y":6,"z":0,"ter":"t_dirt","furn":"f_null","rad":0,"items":1}
+{"k":"mark","before":2,"label":"tile","turn":2,"x":7,"y":6,"z":0,"ter":"t_dirt","furn":"f_null","rad":0,"items":1}
+{"k":"mark","before":2,"label":"tile","turn":2,"x":6,"y":7,"z":0,"ter":"t_dirt","furn":"f_null","rad":0,"items":1}
+{"k":"mark","before":2,"label":"turn","turn":3}
+{"k":"mark","before":2,"label":"submap","index":0}
+{"k":"draw","i":2,"d":0,"fn":"rng","args":[0,1],"r":1,"pc":"0x3f784ad","src":"src/rng.h:137 (point random_entry<std::vector<point, std::allocator<point> >, point>)"}
+{"k":"draw","i":3,"d":0,"fn":"rng","args":[0,1],"r":0,"pc":"0x3f784ad","src":"src/rng.h:137 (point random_entry<std::vector<point, std::allocator<point> >, point>)"}
+{"k":"mark","before":4,"label":"end_turn","turn":3}
+{"k":"mark","before":4,"label":"tile","turn":3,"x":2,"y":2,"z":0,"ter":"t_dirt","furn":"f_null","rad":0,"items":1}
+{"k":"mark","before":4,"label":"tile","turn":3,"x":6,"y":6,"z":0,"ter":"t_dirt","furn":"f_null","rad":0,"items":2}
+{"k":"mark","before":4,"label":"tile","turn":3,"x":6,"y":7,"z":0,"ter":"t_dirt","furn":"f_null","rad":0,"items":1}
+{"k":"mark","before":4,"label":"turn","turn":4}
+{"k":"mark","before":4,"label":"submap","index":0}
+{"k":"draw","i":4,"d":0,"fn":"rng","args":[0,1],"r":1,"pc":"0x3f784ad","src":"src/rng.h:137 (point random_entry<std::vector<point, std::allocator<point> >, point>)"}
+{"k":"draw","i":5,"d":0,"fn":"rng","args":[0,1],"r":0,"pc":"0x3f784ad","src":"src/rng.h:137 (point random_entry<std::vector<point, std::allocator<point> >, point>)"}
+{"k":"mark","before":6,"label":"end_turn","turn":4}
+{"k":"mark","before":6,"label":"tile","turn":4,"x":2,"y":2,"z":0,"ter":"t_dirt","furn":"f_null","rad":0,"items":1}
+{"k":"mark","before":6,"label":"tile","turn":4,"x":6,"y":6,"z":0,"ter":"t_dirt","furn":"f_null","rad":0,"items":2}
+{"k":"mark","before":6,"label":"tile","turn":4,"x":6,"y":7,"z":0,"ter":"t_dirt","furn":"f_null","rad":0,"items":1}
+{"k":"mark","before":6,"label":"turn","turn":5}
+{"k":"mark","before":6,"label":"submap","index":0}
+{"k":"draw","i":6,"d":0,"fn":"rng","args":[0,1],"r":0,"pc":"0x3f784ad","src":"src/rng.h:137 (point random_entry<std::vector<point, std::allocator<point> >, point>)"}
+{"k":"draw","i":7,"d":0,"fn":"rng","args":[0,1],"r":0,"pc":"0x3f784ad","src":"src/rng.h:137 (point random_entry<std::vector<point, std::allocator<point> >, point>)"}
+{"k":"mark","before":8,"label":"end_turn","turn":5}
+{"k":"mark","before":8,"label":"tile","turn":5,"x":2,"y":2,"z":0,"ter":"t_dirt","furn":"f_null","rad":0,"items":1}
+{"k":"mark","before":8,"label":"tile","turn":5,"x":6,"y":6,"z":0,"ter":"t_dirt","furn":"f_null","rad":0,"items":2}
+{"k":"mark","before":8,"label":"tile","turn":5,"x":7,"y":6,"z":0,"ter":"t_dirt","furn":"f_null","rad":0,"items":1}
+{"k":"footer","draws":8,"top":8,"bypass_steps":0,"unrecorded":0}

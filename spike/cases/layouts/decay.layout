@@ -1,0 +1,10 @@
+# half-life decay and newborn suppression for short-lived fields
+region 1 1
+ter all t_dirt
+field 2 2 fd_electricity 1 5
+field 4 4 fd_plasma 2 1
+field 6 6 fd_laser 1 0
+field 8 8 fd_acid 3 1
+field 10 10 fd_blood 1 1
+field 2 10 fd_smoke 2 0
+field 10 2 fd_sludge 2 30

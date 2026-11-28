@@ -1,0 +1,15 @@
+# gas remover next to dangerous gases: BN erases from the std::map inside a
+# range-for and increments the erased iterator (UB). Crashes the Reference build.
+region 1 1
+ter all t_dirt
+field 6 6 fd_gas_remover 1 1
+field 5 5 fd_toxic_gas 2 1
+field 6 5 fd_smoke 2 1
+field 7 5 fd_tear_gas 2 1
+field 5 6 fd_toxic_gas 2 1
+field 7 6 fd_toxic_gas 2 1
+field 7 6 fd_smoke 2 1
+field 5 7 fd_toxic_gas 2 1
+field 6 7 fd_toxic_gas 2 1
+field 7 7 fd_relax_gas 2 1
+field 6 6 fd_smoke 2 1

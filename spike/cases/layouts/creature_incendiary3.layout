@@ -1,0 +1,5 @@
+# creature case: triffid in intensity-3 incendiary, then intensity 2 via a second layout seed set
+region 1 1
+ter all t_dirt
+field 6 6 fd_incendiary 3 1
+monster 6 6 mon_triffid

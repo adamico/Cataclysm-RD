@@ -340,7 +340,9 @@ fn load_one(jo: &Value) -> Result<Pending, LoadError> {
                     max_duration: get_dur(joe, "max_duration", 0)?,
                     intensity: get_i32(joe, "intensity", 0),
                     bp: joe.get("body_part").and_then(Value::as_str).map(str::to_string),
-                    is_environmental: get_bool(joe, "is_environmental", true),
+                    // BN: optional() without a default assigns bool() = false when absent;
+                    // the struct initializer (true) never applies (session 3 replay finding).
+                    is_environmental: get_bool(joe, "is_environmental", false),
                     immune_in_vehicle: get_bool(joe, "immune_in_vehicle", false),
                     immune_inside_vehicle: get_bool(joe, "immune_inside_vehicle", false),
                     immune_outside_vehicle: get_bool(joe, "immune_outside_vehicle", false),

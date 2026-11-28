@@ -1,0 +1,9 @@
+# level-3 fire rises to the z-level above (open air / flammable floor)
+region 1 1
+zlevels 0 1
+ter all t_grass
+ter 6 6 t_open_air 1
+ter 7 7 t_floor 1
+field 6 6 fd_fire 3 1
+field 7 7 fd_fire 3 1
+field 7 7 fd_fire 1 1 1

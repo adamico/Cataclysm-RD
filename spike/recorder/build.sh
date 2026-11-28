@@ -62,6 +62,15 @@ LINK_CMD=${LINK_CMD/"src/CMakeFiles/cataclysm-bn.dir/main.cpp.o"/"$OUT/fields_re
 LINK_CMD=${LINK_CMD/"-o src/cataclysm-bn"/"-o $OUT/fields_recorder"}
 # do not overwrite the Reference build's own link dependency file
 LINK_CMD=${LINK_CMD/"-Xlinker --dependency-file=src/CMakeFiles/cataclysm-bn.dir/link.d"/}
+# Session 3: wrap calls out of Fields so their results are recorded
+# (fields_recorder.cpp, "calls out of Fields").
+for sym in _ZN4item4burnER9fire_data _ZN8Creature10add_effectERK6effectbb \
+    _ZN8Creature10add_effectERK9string_idI11effect_typeERK13time_durationRKS0_I14body_part_typeEibb \
+    _ZN8Creature16check_dead_stateEv \
+    _ZN8Creature14add_env_effectERK9string_idI11effect_typeERKS0_I14body_part_typeEiRK13time_duration \
+    _ZN7monster11make_fungusEv _ZN8teleport8teleportER8Creatureiibb; do
+    LINK_CMD=${LINK_CMD/"-o $OUT/fields_recorder"/"-Wl,--wrap=$sym -o $OUT/fields_recorder"}
+done
 echo "[recorder] link fields_recorder"
 eval "$LINK_CMD"
 

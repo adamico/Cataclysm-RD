@@ -1,0 +1,5 @@
+# fire on swimmable terrain (underwater speed-up; not burnable)
+region 1 1
+ter all t_water_sh
+field 6 6 fd_fire 2 1
+field 3 3 fd_blood 2 1

@@ -1,0 +1,9 @@
+# creature case: zombie in smoke + tear gas + toxic gas + relax gas + nuke gas on one tile
+region 1 1
+ter all t_dirt
+field 6 6 fd_smoke 3 1
+field 6 6 fd_tear_gas 3 1
+field 6 6 fd_toxic_gas 3 1
+field 6 6 fd_relax_gas 2 1
+field 6 6 fd_nuke_gas 3 1
+monster 6 6 mon_zombie

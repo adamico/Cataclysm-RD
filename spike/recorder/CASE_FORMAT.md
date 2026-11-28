@@ -83,3 +83,19 @@ Non-finite values are written as the strings `"inf"`, `"-inf"`, `"nan"`.
   processing is single-threaded.
 - `std::normal_distribution` caches its second value, so the raw engine stream
   cannot be reproduced from a case; helper-level replay is unaffected.
+
+## Session 3 additions
+
+All are `mark` lines (readers that ignore unknown labels still work).
+
+| `label` | where | fields |
+|---|---|---|
+| `ter_def`, `furn_def` | start of a case | `id`, `movecost`, `flags` (the Fields-relevant flags as BN reports them). The Rust replay builds its terrain catalogue from these, not from the hand-made stub. |
+| `item_def` | start | `x`, `y`, `z`, `index`, `itype`, `weight_g`, `flammable`, `rock` for each layout item |
+| `tile` | after the layout (`turn` 0) and after each turn | `x`, `y`, `z`, `ter`, `furn`, `rad`, `items` for every tile that differs from a default tile |
+| `end_turn` | after each turn | `turn` |
+| `call` / `ret` | around a call out of Fields, wrapped at link time (`-Wl,--wrap`) | `fn` plus its inputs on `call`, its outputs on `ret`. Draws made inside the real call sit between the two. Wrapped: `item::burn` (`ret` also lists the `products` that `create_burnproducts` will push, computed the same way), `Creature::add_effect` (both overloads Fields reaches), `Creature::check_dead_state`, `Creature::add_env_effect` (4-argument form), `teleport::teleport` (`ret` has the landing tile), `monster::make_fungus`. Creature-side `call` marks carry the caller's `pc` (resolved to `src` like draws), so a replay can tell Fields' own calls from calls made inside a virtual call it cannot bracket (`deal_damage`). |
+| `creature_def` | start of a creature case | `id`, `monster`, `flies`, `digs`, `digging`, `armor_heat_torso`, `tags` (monster flags, materials, species and immunities the Rust Combat port asks about) |
+| `creature` | after placing and after each turn | `turn`, `hp`, `moves`, `dead` |
+
+The header of a creature case has `"rule":"creature_in_field"`. `src` on a draw is the innermost game-code frame (rng.h's inline helpers and libstdc++ frames are skipped; `random_entry*` templates stay `src/rng.h:<line>` because the template's caller is a real stack frame, not an inline one).

@@ -1,0 +1,7 @@
+# bees wander (copy to every free neighbour); bees with a killer field die
+region 2 1
+ter all t_dirt
+field 6 6 fd_bees 3 1
+field 11 3 fd_bees 2 1
+field 3 9 fd_bees 2 1
+field 3 9 fd_smoke 1 1

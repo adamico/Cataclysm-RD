@@ -1,6 +1,6 @@
 [workspace]
 resolver = "2"
-members = ["bn_dice", "fields", "bubble_stub", "combat_stub"]
+members = ["bn_dice", "fields", "bubble_stub", "combat_stub", "fields_harness"]
 
 [workspace.package]
 edition = "2021"

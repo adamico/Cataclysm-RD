@@ -1,0 +1,10 @@
+# creature case: zombie in fatigue (teleport), flame burst, incendiary, dazzling, insecticidal gas, plasma, laser
+region 1 1
+ter all t_dirt
+field 6 6 fd_fatigue 3 1
+field 6 6 fd_flame_burst 1 1
+field 6 6 fd_incendiary 2 1
+field 6 6 fd_dazzling 1 1
+field 6 6 fd_plasma 2 1
+field 6 6 fd_laser 2 1
+monster 6 6 mon_zombie

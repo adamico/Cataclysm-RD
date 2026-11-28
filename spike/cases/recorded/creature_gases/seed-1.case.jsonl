@@ -1,0 +1,50 @@
+{"k":"header","format":"bn-draws/1","baseline":"e7b4976","case":"creature_gases","seed":1,"turns":5,"layout":"creature_gases.layout","rule":"creature_in_field"}
+{"k":"mark","before":0,"label":"creature_def","id":"mon_zombie","monster":true,"flies":false,"digs":false,"digging":false,"armor_heat_torso":0,"tags":["NO_BREATHE","SEES","grp:Flesh","grp:FleshNVeg","immune_field:fd_nuke_gas","immune_field:fd_relax_gas","immune:smoke","immune:smoke","immune:smoke","immune_field:fd_tear_gas","immune_field:fd_toxic_gas"]}
+{"k":"mark","before":0,"label":"creature","turn":0,"hp":80,"moves":0,"dead":false}
+{"k":"seed","before":0,"seed":1}
+{"k":"mark","before":0,"label":"turn","turn":1}
+{"k":"draw","i":0,"d":0,"fn":"one_in","args":[0],"r":true,"pc":"0x3f71851","src":"src/map/map_field.cpp:564 (map::creature_in_field)"}
+{"k":"draw","i":1,"d":0,"fn":"rng","args":[15,15],"r":15,"pc":"0x3f71871","src":"src/map/field_type.h:89 (field_effect::get_duration)"}
+{"k":"draw","i":2,"d":0,"fn":"one_in","args":[0],"r":true,"pc":"0x3f71851","src":"src/map/map_field.cpp:564 (map::creature_in_field)"}
+{"k":"draw","i":3,"d":0,"fn":"rng","args":[15,15],"r":15,"pc":"0x3f71871","src":"src/map/field_type.h:89 (field_effect::get_duration)"}
+{"k":"draw","i":4,"d":0,"fn":"one_in","args":[0],"r":true,"pc":"0x3f71851","src":"src/map/map_field.cpp:564 (map::creature_in_field)"}
+{"k":"draw","i":5,"d":0,"fn":"rng","args":[3,3],"r":3,"pc":"0x3f71871","src":"src/map/field_type.h:89 (field_effect::get_duration)"}
+{"k":"mark","before":6,"label":"end_turn","turn":1}
+{"k":"mark","before":6,"label":"creature","turn":1,"hp":80,"moves":0,"dead":false}
+{"k":"mark","before":6,"label":"turn","turn":2}
+{"k":"draw","i":6,"d":0,"fn":"one_in","args":[0],"r":true,"pc":"0x3f71851","src":"src/map/map_field.cpp:564 (map::creature_in_field)"}
+{"k":"draw","i":7,"d":0,"fn":"rng","args":[15,15],"r":15,"pc":"0x3f71871","src":"src/map/field_type.h:89 (field_effect::get_duration)"}
+{"k":"draw","i":8,"d":0,"fn":"one_in","args":[0],"r":true,"pc":"0x3f71851","src":"src/map/map_field.cpp:564 (map::creature_in_field)"}
+{"k":"draw","i":9,"d":0,"fn":"rng","args":[15,15],"r":15,"pc":"0x3f71871","src":"src/map/field_type.h:89 (field_effect::get_duration)"}
+{"k":"draw","i":10,"d":0,"fn":"one_in","args":[0],"r":true,"pc":"0x3f71851","src":"src/map/map_field.cpp:564 (map::creature_in_field)"}
+{"k":"draw","i":11,"d":0,"fn":"rng","args":[3,3],"r":3,"pc":"0x3f71871","src":"src/map/field_type.h:89 (field_effect::get_duration)"}
+{"k":"mark","before":12,"label":"end_turn","turn":2}
+{"k":"mark","before":12,"label":"creature","turn":2,"hp":80,"moves":0,"dead":false}
+{"k":"mark","before":12,"label":"turn","turn":3}
+{"k":"draw","i":12,"d":0,"fn":"one_in","args":[0],"r":true,"pc":"0x3f71851","src":"src/map/map_field.cpp:564 (map::creature_in_field)"}
+{"k":"draw","i":13,"d":0,"fn":"rng","args":[15,15],"r":15,"pc":"0x3f71871","src":"src/map/field_type.h:89 (field_effect::get_duration)"}
+{"k":"draw","i":14,"d":0,"fn":"one_in","args":[0],"r":true,"pc":"0x3f71851","src":"src/map/map_field.cpp:564 (map::creature_in_field)"}
+{"k":"draw","i":15,"d":0,"fn":"rng","args":[15,15],"r":15,"pc":"0x3f71871","src":"src/map/field_type.h:89 (field_effect::get_duration)"}
+{"k":"draw","i":16,"d":0,"fn":"one_in","args":[0],"r":true,"pc":"0x3f71851","src":"src/map/map_field.cpp:564 (map::creature_in_field)"}
+{"k":"draw","i":17,"d":0,"fn":"rng","args":[3,3],"r":3,"pc":"0x3f71871","src":"src/map/field_type.h:89 (field_effect::get_duration)"}
+{"k":"mark","before":18,"label":"end_turn","turn":3}
+{"k":"mark","before":18,"label":"creature","turn":3,"hp":80,"moves":0,"dead":false}
+{"k":"mark","before":18,"label":"turn","turn":4}
+{"k":"draw","i":18,"d":0,"fn":"one_in","args":[0],"r":true,"pc":"0x3f71851","src":"src/map/map_field.cpp:564 (map::creature_in_field)"}
+{"k":"draw","i":19,"d":0,"fn":"rng","args":[15,15],"r":15,"pc":"0x3f71871","src":"src/map/field_type.h:89 (field_effect::get_duration)"}
+{"k":"draw","i":20,"d":0,"fn":"one_in","args":[0],"r":true,"pc":"0x3f71851","src":"src/map/map_field.cpp:564 (map::creature_in_field)"}
+{"k":"draw","i":21,"d":0,"fn":"rng","args":[15,15],"r":15,"pc":"0x3f71871","src":"src/map/field_type.h:89 (field_effect::get_duration)"}
+{"k":"draw","i":22,"d":0,"fn":"one_in","args":[0],"r":true,"pc":"0x3f71851","src":"src/map/map_field.cpp:564 (map::creature_in_field)"}
+{"k":"draw","i":23,"d":0,"fn":"rng","args":[3,3],"r":3,"pc":"0x3f71871","src":"src/map/field_type.h:89 (field_effect::get_duration)"}
+{"k":"mark","before":24,"label":"end_turn","turn":4}
+{"k":"mark","before":24,"label":"creature","turn":4,"hp":80,"moves":0,"dead":false}
+{"k":"mark","before":24,"label":"turn","turn":5}
+{"k":"draw","i":24,"d":0,"fn":"one_in","args":[0],"r":true,"pc":"0x3f71851","src":"src/map/map_field.cpp:564 (map::creature_in_field)"}
+{"k":"draw","i":25,"d":0,"fn":"rng","args":[15,15],"r":15,"pc":"0x3f71871","src":"src/map/field_type.h:89 (field_effect::get_duration)"}
+{"k":"draw","i":26,"d":0,"fn":"one_in","args":[0],"r":true,"pc":"0x3f71851","src":"src/map/map_field.cpp:564 (map::creature_in_field)"}
+{"k":"draw","i":27,"d":0,"fn":"rng","args":[15,15],"r":15,"pc":"0x3f71871","src":"src/map/field_type.h:89 (field_effect::get_duration)"}
+{"k":"draw","i":28,"d":0,"fn":"one_in","args":[0],"r":true,"pc":"0x3f71851","src":"src/map/map_field.cpp:564 (map::creature_in_field)"}
+{"k":"draw","i":29,"d":0,"fn":"rng","args":[3,3],"r":3,"pc":"0x3f71871","src":"src/map/field_type.h:89 (field_effect::get_duration)"}
+{"k":"mark","before":30,"label":"end_turn","turn":5}
+{"k":"mark","before":30,"label":"creature","turn":5,"hp":80,"moves":0,"dead":false}
+{"k":"footer","draws":30,"top":30,"bypass_steps":0,"unrecorded":0}

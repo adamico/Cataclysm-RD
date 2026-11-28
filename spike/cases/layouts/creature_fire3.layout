@@ -1,0 +1,5 @@
+# creature case: a flying monster in intensity-3 fire (flies -> one_in(3) branch)
+region 1 1
+ter all t_dirt
+field 6 6 fd_fire 3 1
+monster 6 6 mon_bee

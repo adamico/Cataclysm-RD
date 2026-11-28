@@ -1,0 +1,8 @@
+# fire on FLAMMABLE_ASH terrain (t_wood_stairs_down) and on FLAMMABLE_HARD floor at intensity 3
+region 1 1
+ter all t_dirt
+ter 4 4 t_wood_stairs_down
+ter 5 4 t_wood_stairs_down
+ter 8 8 t_floor
+field 4 4 fd_fire 3 1
+field 8 8 fd_fire 3 1

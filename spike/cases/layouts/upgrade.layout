@@ -1,0 +1,8 @@
+# intensity upgrade (fd_fatigue: one_in(10), every 6 hours); clock on the boundary
+region 1 1
+clock 21600
+ter all t_dirt
+field 6 6 fd_fatigue 1 1
+field 3 3 fd_fatigue 2 1
+field 9 3 fd_fatigue 1 1
+field 3 9 fd_fatigue 1 1

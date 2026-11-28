@@ -1,0 +1,6 @@
+# creature case: a web spider in insecticidal gas and its own web (WEBWALK)
+region 1 1
+ter all t_dirt
+field 6 6 fd_insecticidal_gas 3 1
+field 6 6 fd_web 2 1
+monster 6 6 mon_spider_web

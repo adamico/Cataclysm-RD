@@ -1,0 +1,6 @@
+# fire on flammable furniture (FLAMMABLE_ASH furniture -> f_ash)
+region 1 1
+ter all t_dirt
+furn 6 6 f_chair
+furn 7 6 f_chair
+field 6 6 fd_fire 3 1

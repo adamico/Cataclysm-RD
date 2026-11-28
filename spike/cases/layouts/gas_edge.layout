@@ -1,0 +1,6 @@
+# session 1 lead: smoke on a submap edge (23,18) of a 3x3 region
+region 3 3
+ter all t_dirt
+field 23 18 fd_smoke 3 1
+field 17 17 fd_smoke 3 1
+field 12 12 fd_toxic_gas 3 1

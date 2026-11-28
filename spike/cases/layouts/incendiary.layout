@@ -1,0 +1,10 @@
+# incendiary next to flammable terrain, furniture and items
+region 1 1
+ter all t_dirt
+ter 5 5 t_grass
+ter 6 5 t_grass
+ter 7 5 t_floor
+furn 5 6 f_chair
+item 7 7 paper
+item 5 7 paper
+field 6 6 fd_incendiary 3 1

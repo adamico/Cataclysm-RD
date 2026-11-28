@@ -1,0 +1,7 @@
+# creature case: zombie in web + sap + sludge (fields set to 0 by the monster)
+region 1 1
+ter all t_dirt
+field 6 6 fd_web 2 1
+field 6 6 fd_sap 2 1
+field 6 6 fd_sludge 2 1
+monster 6 6 mon_zombie

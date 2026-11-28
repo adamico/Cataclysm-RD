@@ -1,0 +1,7 @@
+# fungicidal gas on fungal terrain and furniture
+region 1 1
+ter all t_fungus
+furn 6 6 f_fungal_clump
+furn 4 4 f_fungal_clump
+field 6 6 fd_fungicidal_gas 3 1
+field 4 4 fd_fungicidal_gas 1 1

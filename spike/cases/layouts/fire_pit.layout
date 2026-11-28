@@ -1,0 +1,7 @@
+# fire in a pit next to pits and grass (in_pit mismatch blocks spread)
+region 1 1
+ter all t_grass
+ter 6 6 t_pit
+ter 7 6 t_pit
+field 6 6 fd_fire 3 -10
+field 7 6 fd_fire 1 1

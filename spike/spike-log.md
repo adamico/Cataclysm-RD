@@ -100,3 +100,75 @@ written** and marked `~`, and both rows show the shared window.
      same bugs reproduce.
   6. `floor_cache` and `is_uniform` are bubble-map caches stored on `submap`
      that Fields reads or clears; they became port methods.
+
+## Session 3: oracle and tests, Fields part
+
+The Reference build from session 1 was still on disk (another session's
+scratchpad), so nothing was rebuilt. The recorder was rebuilt six times into
+this session's scratchpad (18–68 s each). Kinds:
+- **fixed**: oracle machinery that any context would reuse (recorder
+  directives, link-time wraps, the case reader, `ReplayDice`, dump writer,
+  world builder, soak runner and comparison, coverage);
+- **Fields**: layouts, per-rule tests, the Fields-specific stub answers and
+  chasing failures;
+- **fix**: changing the translation.
+
+Rows that ran during a wait are marked *overlaps*.
+
+| session | kind of work | who | start | end | wall-clock | lines produced | notes |
+|---|---|---|---|---|---|---|---|
+| 3 | reading (shared) | agent | 2026-11-28T09:50:12+01:00 | 2026-11-28T09:53:20+01:00 | 3m08s | 0 | issue #14 plan and both session comments, this log, `STUBS.md`, CASE/DUMP formats, recorder sources, Rust ports and `process.rs` structure |
+| 3 | oracle and tests: fixed | agent | 2026-11-28T09:53:20+01:00 | 2026-11-28T09:57:39+01:00 | ~2m40s (of 4m19s) | ~330 C++ | layout directives (z-levels, furn, item, rad, clock), `ter_def`/`item_def`/`tile` marks, `--dump-every`, `item::burn` wrapped with `-Wl,--wrap`; 2 recorder builds (18 s, 36 s; one link fix: the flag landed after `&& :`) |
+| 3 | oracle and tests: Fields | agent | 2026-11-28T09:53:20+01:00 | 2026-11-28T09:57:39+01:00 | ~1m40s (of 4m19s) | 230 layout | 26 per-rule layouts |
+| 3 | oracle and tests: Fields | agent | 2026-11-28T09:57:45+01:00 | 2026-11-28T10:05:08+01:00 | 7m23s | 0 | **wait**: recording 26 layouts × 8 seeds × 5 turns (8 in parallel; slow because `annotate_case.py` ran one addr2line per pc on a 737 MB binary) |
+| 3 | oracle and tests: fixed | agent | 2026-11-28T09:57:45+01:00 | 2026-11-28T10:02:42+01:00 | ~5m | ~620 Rust | *overlaps the wait*: crate `fields_harness` (layout, case, `ReplayDice`, world, dump), replay test driver, `Dice::foreign` hook, Items stub replay |
+| 3 | oracle and tests: Fields | agent | 2026-11-28T10:02:42+01:00 | 2026-11-28T10:05:54+01:00 | 3m12s | ~40 | first replay runs: smoke passes 20 turns byte-exact; 2 harness bugs (f32 compare, serde float round trip); `smoke_dump_is_byte_exact`; 3-mutant check (2 caught) |
+| 3 | oracle and tests: Fields | agent | 2026-11-28T10:05:54+01:00 | 2026-11-28T10:07:34+01:00 | 1m40s | ~25 layout | BN segfaults in the gas remover (gdb: `_Rb_tree_increment` at `map_field.cpp:1474`), two layouts with invalid intensities fixed; re-record (**wait** 39 s) |
+| 3 | oracle and tests: fixed | agent | 2026-11-28T10:07:34+01:00 | 2026-11-28T10:12:31+01:00 | 4m57s | ~110 | `coverage.py`; `annotate_case.py`: one addr2line for all pcs, inline frames (`-i`), innermost game frame; **waits** 1m28s + 1m42s re-annotating 209 cases; 2 more layouts (record 39 s) |
+| 3 | oracle and tests: fixed | agent | 2026-11-28T10:12:31+01:00 | 2026-11-28T10:17:30+01:00 | ~5m | ~260 | soak: Rust `soak` bin, `compare_soak.py` (exact permutation + Holm), BN soak runs (19 s, 23 s), busy layout, whole-run replay of a 251,875-draw case (0.5 s) and a corrupted-case check; 64-seed wide recording started in the background |
+| 3 | oracle and tests: fixed | agent | 2026-11-28T10:17:30+01:00 | 2026-11-28T10:20:46+01:00 | 3m16s | ~260 C++ | recorder bubble mode (creature cases in `g->m`, `creature_def`/`creature` marks) and 6 Combat-side wraps; build 39 s, compiled first time |
+| 3 | oracle and tests: Fields | agent | 2026-11-28T10:20:46+01:00 | 2026-11-28T10:22:39+01:00 | 1m53s | 70 layout | 10 creature layouts; first creature record (**wait** 1m23s) |
+| 3 | oracle and tests: Fields | agent | 2026-11-28T10:22:39+01:00 | 2026-11-28T10:28:06+01:00 | 5m27s | ~300 Rust, ~50 C++ | `ReplayCombat`; wide set shows missing burn products (stub gap): computed in the `item::burn` wrap, pushed by the stub; build 52 s; item re-record (2m33s, overlapped) |
+| 3 | mechanical translation, fix | agent | 2026-11-28T10:28:06+01:00 | 2026-11-28T10:30:27+01:00 | 2m21s | 3 | **translation bug 1**: `field_effect.is_environmental` default (see `rust/REPLAY_FINDINGS.md`); same bug class checked across the loader, no more |
+| 3 | oracle and tests: Fields | agent | 2026-11-28T10:30:27+01:00 | 2026-11-28T10:32:48+01:00 | 2m21s | ~60 | onfire hp and `zapped` inside virtual `deal_damage` (stub side); call marks carry pcs (fixed part); build 1m08s |
+| 3 | oracle and tests: Fields | agent | 2026-11-28T10:32:48+01:00 | 2026-11-28T10:38:07+01:00 | 5m19s | 0 | **wait**: creature re-record (CPU shared with the wide run) |
+| 3 | oracle and tests: Fields | agent | 2026-11-28T10:38:07+01:00 | 2026-11-28T10:39:50+01:00 | 1m43s | ~30 | bleeding (fd_blood/gibs from monster code), teleport position, monster placed before dangerous fields; build 33 s |
+| 3 | oracle and tests: fixed (docs) | agent | 2026-11-28T10:39:50+01:00 | 2026-11-28T10:43:16+01:00 | 3m26s | ~80 docs | *overlaps the* **wait** (creature re-record 3m26s): CASE/DUMP/recorder README additions, `cases/README.md` |
+| 3 | oracle and tests: Fields | agent | 2026-11-28T10:43:16+01:00 | 2026-11-28T10:46:28+01:00 | 3m12s | 50 layout | full `cargo test`, coverage; 7 more creature layouts (record **wait** 2m23s) |
+| 3 | oracle and tests: Fields | agent | 2026-11-28T10:46:28+01:00 | 2026-11-28T10:55:55+01:00 | 9m27s | ~5 | **wait** for the wide set (to 10:50:43); wide replay: product weight by charges (oracle side); build 18 s; re-record items 8 + 64 seeds (**wait** 4m27s) |
+| 3 | oracle and tests: Fields | agent | 2026-11-28T10:55:55+01:00 | 2026-11-28T10:58:12+01:00 | 2m17s | 0 | session 1 lead: not an edge bug; BN's engine is `minstd_rand0`, and the first draw after a small seed is near its minimum |
+| 3 | oracle and tests: Fields (docs) | agent | 2026-11-28T10:58:12+01:00 | 2026-11-28T11:00:14+01:00 | 2m02s | ~260 docs | `SOAK_RESULT.md`, `REPLAY_FINDINGS.md`, `STUBS.md`, this log |
+
+## Session 3 totals
+
+- Wall-clock: 09:50:12 → 11:00:14 (70m02s) for the work rows, the longest session. Commit,
+  push and comment come after the last row.
+- **Waits not overlapped by work: ≈ 27 min.**
+  - recordings and re-annotation: ≈ 22m40s;
+  - recorder builds: 4m37s over 8 builds;
+  - most of it is BN start-up (~13 s per process), CPU shared between
+    parallel recordings, and one addr2line process per case.
+- Agent time by kind (approximate where a window held both kinds):
+
+  | kind | agent time | lines |
+  |---|---|---|
+  | reading (shared) | 3m08s | 0 |
+  | oracle and tests: fixed (machinery) | ≈ 23 min, 8 of them during waits | ≈ 600 C++ (recorder), ≈ 1,330 Rust (`fields_harness` without the test file), ≈ 280 Python/shell, ≈ 80 docs |
+  | oracle and tests: Fields (layouts, tests, stub answers, failures) | ≈ 27 min | 389 layout lines (44 layouts), ≈ 250 Rust (tests), ≈ 50 C++, ≈ 260 docs |
+  | mechanical translation, fix | **2m21s** | 3 |
+
+- **Result.**
+  - 48 replay tests, all passing; the 64-seed wide set passes too.
+  - 72 of 114 draw sites in `map_field.cpp` hit, and 41 of the 47 in
+    `process_fields_in_submap`.
+  - **One translation bug** in session 2's ~4,300 Rust lines, fixed in 2m21s.
+  - 10 harness, stub or layout problems fixed on the oracle side.
+  - Soak: 0 of 168 comparisons differ (target: 1.25 SD per test, ≈ 1.9 SD
+    after Holm).
+  - Gaps: `player_in_field`, emit / propagate / hot air / wind blockers, the
+    gas remover's removal path (BN crashes).
+- For the estimate: the Fields part of the oracle took about as long as the
+  translation itself (≈ 27 min against session 2's ≈ 14). Waits added as much
+  again. Replay found one bug, so session 2's speed holds up *where the cases
+  reach*. Unchecked: `player_in_field`, about 330 BN lines and the largest
+  single function.

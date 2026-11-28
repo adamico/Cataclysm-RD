@@ -1,0 +1,9 @@
+# fire with negative age grows intensity (neighbour count / -50 min / -500 min)
+region 1 1
+ter all t_dirt
+field 2 2 fd_fire 1 -100
+field 6 6 fd_fire 1 -3500
+field 9 9 fd_fire 1 -31000
+field 8 9 fd_fire 1 1
+field 10 9 fd_fire 1 1
+field 9 8 fd_fire 1 1

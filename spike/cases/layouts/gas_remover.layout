@@ -1,0 +1,11 @@
+# gas remover with only harmless fields in reach (BN's removal path is UB and
+# crashes the Reference build: see gas_remover_crash.layout and REPLAY_FINDINGS.md)
+region 1 1
+ter all t_dirt
+field 6 6 fd_gas_remover 1 1
+field 5 5 fd_fog 2 1
+field 7 5 fd_fog 2 1
+field 5 7 fd_blood 1 1
+field 7 7 fd_web 1 1
+field 6 7 fd_fog 1 1
+field 3 3 fd_gas_remover 1 1

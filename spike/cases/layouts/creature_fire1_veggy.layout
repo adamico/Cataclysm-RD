@@ -1,0 +1,5 @@
+# creature case: a veggy monster in intensity-1 fire
+region 1 1
+ter all t_dirt
+field 6 6 fd_fire 1 1
+monster 6 6 mon_triffid

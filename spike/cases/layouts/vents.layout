@@ -1,0 +1,12 @@
+# fire vent, flame burst, shock vent, acid vent at both intensities
+region 2 2
+ter all t_dirt
+field 4 4 fd_fire_vent 3 1
+field 4 8 fd_fire_vent 1 1
+field 8 4 fd_flame_burst 1 5
+field 8 8 fd_flame_burst 1 1
+field 16 16 fd_shock_vent 1 1
+field 19 19 fd_shock_vent 3 1
+field 16 5 fd_acid_vent 1 1
+field 20 5 fd_acid_vent 3 100
+field 20 8 fd_acid_vent 2 1

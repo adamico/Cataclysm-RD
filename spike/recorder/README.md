@@ -62,6 +62,21 @@ field <x> <y> <fd_id> <intensity> <age_turns>
 Give layout fields `age_turns >= 1`: BN skips effects on newborn (age 0) fields
 for one tick.
 
+Session 3 adds (each takes an optional trailing `z`, default 0):
+
+```
+zlevels <lo> <hi>                            # z-levels of the region
+clock <turns>                                # start time = turn_zero + turns (default 3600)
+furn <x> <y> <furn_id> [z]
+item <x> <y> <itype_id> [z]                  # one item per line, spawned at the start time
+rad <x> <y> <radiation> [z]
+monster <x> <y> <mon_id>                     # creature case: runs map::creature_in_field in g->m
+```
+
+and the run options `--dump-every` (a snapshot after every turn) and
+`--case <name>` (the case name in the header). Per-rule cases are recorded with
+`spike/cases/record_cases.sh`; see `spike/cases/README.md`.
+
 ## Checking the copy against BN's rng.cpp
 
 ```bash

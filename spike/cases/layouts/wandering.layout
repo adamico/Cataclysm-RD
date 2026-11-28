@@ -1,0 +1,6 @@
+# wandering fields (gas vent, smoke vent) incl. one clipped at the submap edge
+region 2 1
+ter all t_dirt
+field 5 5 fd_gas_vent 3 1
+field 11 2 fd_smoke_vent 3 1
+field 5 6 fd_toxic_gas 1 1

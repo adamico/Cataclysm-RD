@@ -121,7 +121,9 @@ pub trait Items {
     /// `item::burn(frd)`: may draw, so it takes the dice. True = destroyed.
     fn burn(&mut self, at: SubTile, i: usize, frd: &mut FireData, dice: &mut dyn Dice) -> bool;
     /// `create_burnproducts(out, fuel, burned_mass)` (needs materials).
-    fn burnproducts(&self, at: SubTile, i: usize, burned_g: i64) -> Vec<DetachedItem>;
+    /// Takes `&mut self` since session 3: a stub that replays hands out the
+    /// products recorded for the burn it just answered.
+    fn burnproducts(&mut self, at: SubTile, i: usize, burned_g: i64) -> Vec<DetachedItem>;
     /// `fuel->contents.clear_items()` filtered by `!is_irremovable()`.
     fn take_removable_contents(&mut self, at: SubTile, i: usize) -> Vec<DetachedItem>;
     fn erase(&mut self, at: SubTile, i: usize) -> DetachedItem;

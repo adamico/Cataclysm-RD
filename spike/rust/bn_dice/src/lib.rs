@@ -25,6 +25,40 @@ pub trait Dice {
     fn dice(&mut self, number: i32, sides: i32) -> i32;
     /// `roll_remainder(value)`: probabilistic rounding.
     fn roll_remainder(&mut self, value: f64) -> i32;
+
+    /// A call out of Fields into another context (e.g. `item::burn`) that may
+    /// draw on the other side. A replay source returns the recorded call: its
+    /// inputs (`args`) for the stub to check, its outputs (`ret`) for the stub
+    /// to apply, and it consumes every draw the real call made. Live sources
+    /// return `None` and the stub simulates (session 3, ADR 0004).
+    fn foreign(&mut self, _name: &str) -> Option<ForeignCall> {
+        None
+    }
+}
+
+/// A recorded call out of Fields (`call` / `ret` marks of a `bn-draws/1` case).
+/// Numbers in `args` / `ret` (booleans are 0.0 / 1.0), strings in `sargs`
+/// (from the `call` mark), and the objects of a list field of the `ret`
+/// mark (e.g. `item::burn`'s `products`) in `list`.
+#[derive(Clone, Debug, Default, PartialEq)]
+pub struct ForeignCall {
+    pub name: String,
+    pub args: Vec<(String, f64)>,
+    pub ret: Vec<(String, f64)>,
+    pub sargs: Vec<(String, String)>,
+    pub list: Vec<Vec<(String, f64)>>,
+}
+
+impl ForeignCall {
+    pub fn arg(&self, k: &str) -> f64 {
+        self.args.iter().find(|(n, _)| n == k).unwrap_or_else(|| panic!("{}: no arg {k}", self.name)).1
+    }
+    pub fn sarg(&self, k: &str) -> &str {
+        &self.sargs.iter().find(|(n, _)| n == k).unwrap_or_else(|| panic!("{}: no string arg {k}", self.name)).1
+    }
+    pub fn ret(&self, k: &str) -> f64 {
+        self.ret.iter().find(|(n, _)| n == k).unwrap_or_else(|| panic!("{}: no ret {k}", self.name)).1
+    }
 }
 
 /// `random_entry(container)` / `random_entry_removed(container)` pick an index
@@ -180,6 +214,11 @@ impl Dice for LoggingDice<'_> {
     fn roll_remainder(&mut self, value: f64) -> i32 {
         let r = self.inner.roll_remainder(value);
         self.log.push(format!("roll_remainder({value})={r}"));
+        r
+    }
+    fn foreign(&mut self, name: &str) -> Option<ForeignCall> {
+        let r = self.inner.foreign(name);
+        self.log.push(format!("foreign({name})={}", r.is_some()));
         r
     }
 }
