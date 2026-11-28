@@ -172,3 +172,26 @@ Rows that ran during a wait are marked *overlaps*.
   again. Replay found one bug, so session 2's speed holds up *where the cases
   reach*. Unchecked: `player_in_field`, about 330 BN lines and the largest
   single function.
+
+## Session 4: review
+
+| session | kind of work | who | start | end | wall-clock | lines produced | notes |
+|---|---|---|---|---|---|---|---|
+| 4 | review | user | 2026-11-28T11:08:07+01:00 | 2026-11-28T11:31:28+01:00 | 23m21s | 0 | read `STUBS.md`, `REPLAY_FINDINGS.md` and the `fields` crate next to BN |
+
+Review findings (code quality, not behaviour; none are equivalence bugs):
+
+1. **Comments stand in for structure.** The port needs a code convention: a passage that needs a comment gets refactored instead, and decisions go in ADRs, not in code comments.
+2. **`creatures.rs` has a lot of duplication.** It needs a proper code review and a refactor pass.
+3. **`map_rules.rs` duplicates functions**, for example `mb_add_field` and `add_field`.
+
+For the estimate: review ran at about 4,300 Rust lines in 23m21s (≈ 11,000 lines/hour) for a read-through. Its findings mean the translated code needs a **refactor pass** that the spike didn't measure. Mechanical translation that copies BN's structure comes out duplicated and over-commented, and the replay tests are what make that refactor safe.
+
+## Spike totals
+
+| session | kind | who | wall-clock |
+|---|---|---|---|
+| 1 | oracle and tests: fixed | agent | 19m53s (≈ 13 min of build waits) |
+| 2 | mechanical translation + untangling/design | agent | 20m08s |
+| 3 | oracle and tests: fixed + Fields, translation fix | agent | ≈ 70 min (≈ 27 min of waits) |
+| 4 | review | user | 23m21s |
