@@ -1,0 +1,27 @@
+[package]
+name = "rd-checks"
+version = "0.0.0"
+edition = "2024"
+publish = false
+
+[package.metadata.layer]
+layer = "app"
+
+[workspace]
+
+[dependencies]
+cargo_metadata = "0.23"
+proc-macro2 = { version = "1", features = ["span-locations"] }
+syn = { version = "2", features = ["full", "visit"] }
+
+[lints.rust]
+unsafe_code = "forbid"
+missing_docs = "deny"
+unreachable_pub = "deny"
+
+[lints.clippy]
+all = { level = "deny", priority = -1 }
+pedantic = { level = "warn", priority = -1 }
+unwrap_used = "deny"
+expect_used = "deny"
+panic = "deny"

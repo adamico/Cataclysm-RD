@@ -1,6 +1,6 @@
 # Game
 
-The language of the game itself, as the Rusted Dawn Engine's **Deep Model** describes it: what the world is made of and how it changes, split into bounded contexts. It describes the model the port aims for, not how the Bright Nights code happens to be grouped. The project's own language (Engine, Baseline, Gameplay equivalence) is in the [Port glossary](../../GLOSSARY.md).
+The language of the game itself, as the Rusted Dawn Engine's **Deep Model** describes it: what the world is made of and how it changes, split into bounded contexts. It describes the model Rusted Dawn aims for, not how the Bright Nights code happens to be grouped. The project's own language (Engine, Baseline, Gameplay equivalence) is in the [Rusted Dawn glossary](../../GLOSSARY.md).
 
 ## Bounded contexts
 
