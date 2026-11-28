@@ -20,6 +20,23 @@ The AI figure and its pessimistic bound are about 35x apart, and that gap is the
 | 60 | ≈ 22 months |
 | 30 | ≈ 45 months |
 
+### What a 60 h month buys
+
+The go is one month at a time, at 60 h a month ([ADR 0005](adr/0005-gated-go-on-monsters.md)). At the human-hour rates below, plus the 30% for running the harness and integration:
+
+| Piece | Human hours | Months at 60 h |
+|---|---|---|
+| An easy context (Weather, Magic, Records, Crafting) | 7–12 each | ≈ ⅙ |
+| A medium context | 40–110 | 1–2 |
+| **Monsters** (hard) | **≈ 120** | **≈ 2** |
+| Reality bubble (hard) | ≈ 250 | ≈ 4 |
+| Building the harness | 10 | ⅙ |
+| Profiling and the Benchmark save (outside this estimate; a guess) | ≈ 12 | ⅕ |
+| Deep Model skeleton, whole | 120 | 2, but built slice by slice with each context |
+
+- **Month 1:** profiling and the Benchmark save (≈ 12 h); the spike's Rust Fields against BN's Fields on a field-dense lab, as field-processing time per turn (≈ 6 h); the harness, and the recorder tagging draws by replay unit (≈ 13 h); the Monsters design decisions and their slice of the skeleton (≈ 29 h).
+- **Month 2:** Monsters' translation, oracle and interfaces. Its rates are the gate.
+
 ## Size of the job
 
 Lines are `wc -l`, comments included, following the [calibration](research/engine-calibration.md) split rule. The calibration's seven seed contexts were recounted into the sixteen contexts of ADR 0002, by file stem. The recount comes to 755 files and 398k lines, about 6% under the calibrated 422k, because vendored Lua and fmtlib are left out. It is accurate to about ±10% per context: some files serve two contexts and were assigned to their main one.
