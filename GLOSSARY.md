@@ -1,6 +1,6 @@
-# Rust Port
+# Rusted Dawn
 
-The language of Cataclysm: Rusted Dawn, the effort to port the Cataclysm engine to Rust, and, along the way, to make it simulate dense areas (labs above all) faster without changing how the game plays.
+The language of Cataclysm: Rusted Dawn, the effort to rewrite the Cataclysm engine in Rust, and, along the way, to make it simulate dense areas (labs above all) faster without changing how the game plays. The effort itself is called Rusted Dawn: "port" means a **Port**.
 
 ## Language
 
@@ -49,11 +49,11 @@ _Avoid_: Oracle (that is the check, not the program), old build, C++ side
 ### Judging the codebase
 
 **Deep Model**:
-In Evans' sense: a model of the game's domain that captures what its concepts really are, beyond surface nouns, and that is expressed as a ubiquitous language and bounded contexts. It decides *where* the **Engine**'s seams belong. It is distilled from **Content** and code, not from separate prose docs.
+In Evans' sense: a model of the game's domain that captures what its concepts really are, beyond surface nouns, and that is expressed as a ubiquitous language and bounded contexts. It decides _where_ the **Engine**'s seams belong. It is distilled from **Content** and code, not from separate prose docs.
 _Avoid_: Domain model (too loose), deep module
 
 **Deep module**:
-After Ousterhout, with depth measured as leverage (behaviour reachable per unit of interface), not as a lines ratio: a module whose small interface hides a large implementation. It judges *how good* each seam placed by the **Deep Model** is.
+After Ousterhout, with depth measured as leverage (behaviour reachable per unit of interface), not as a lines ratio: a module whose small interface hides a large implementation. It judges _how good_ each seam placed by the **Deep Model** is.
 _Avoid_: Deep Model, component
 
 **Machinery**:
@@ -64,11 +64,19 @@ _Avoid_: Infrastructure, utilities, core
 A place where the **Baseline**'s code disagrees with the **Deep Model**, such as one context's state or rules living in another context's code. Recorded as a porting cost, never as a reason to redraw a context.
 _Avoid_: Leak, coupling, tech debt
 
+**Port**:
+What a bounded context declares it needs from another bounded context, stated in its own language. A context reaches its neighbours only through its **Ports**.
+_Avoid_: Interface, dependency, hook, the port (for the effort: say Rusted Dawn)
+
+**Adapter**:
+What fulfils one context's **Port** by calling another context or **Machinery**. It belongs to neither context. A stub is an **Adapter** that fakes the neighbour.
+_Avoid_: Bridge, glue, shim
+
 ### Guarantees
 
-**Port fidelity**:
-The requirement that a ported part of the **Engine** meets **Gameplay equivalence** with the C++ it replaces. Save and mod compatibility are not part of it.
-_Avoid_: Parity, compatibility
+**Rewrite fidelity**:
+The requirement that a rewritten part of the **Engine** meets **Gameplay equivalence** with the C++ it replaces. Save and mod compatibility are not part of it.
+_Avoid_: Port fidelity, parity, compatibility
 
 **Gameplay equivalence**:
 An optimization's promise that no player-visible behaviour changes, even if the order of random draws shifts. The default bar for every change.
@@ -81,3 +89,7 @@ _Avoid_: Output, result, visible state
 **Approximation**:
 A change that deliberately alters **Simulation** results for speed, such as thinking less often for unseen creatures. Always flagged explicitly and kept behind an option; never passed off as **Gameplay equivalence**.
 _Avoid_: Shortcut, LOD
+
+**Quirk**:
+Accidental **Baseline** behaviour, such as a library's tie order, a compiler's evaluation order or an edge case, that Rusted Dawn reproduces on purpose so that **Gameplay equivalence** holds. Unlike an **Approximation**, it was never a design choice; unlike a **Tangle**, it is about behaviour, not where code lives.
+_Avoid_: Bug-compat, hack, workaround

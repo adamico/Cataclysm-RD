@@ -1,0 +1,13 @@
+{
+  "name": "rusted-dawn-tooling",
+  "private": true,
+  "scripts": {
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "prepare": "lefthook install"
+  },
+  "devDependencies": {
+    "lefthook": "2.2.4",
+    "prettier": "3.10.1"
+  }
+}

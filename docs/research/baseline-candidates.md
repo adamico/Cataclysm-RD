@@ -8,22 +8,22 @@ Question: which upstream release should be the **Baseline** for a Rust port whos
 
 ## At a glance
 
-| | Bright Nights v0.13.0 | CDDA 0.G "Gaiman" | CDDA 0.H-RELEASE "Herbert" *(new)* | TLG rolling build |
-|---|---|---|---|---|
-| Frozen commit | `e7b4976` (2026-09-25) | `d6ec466140` (2023-02-28) | `08f04fd07f` (2024-11-23) | `f50031b` (2026-11-23) |
-| Release model | stable every 2–6 months + nightlies | stable, no point releases | stable | rolling only, no stables |
-| src `.cpp`/`.h` | 996 files / 21.5 MB | 784 / 19.4 MB | 816 / 20.6 MB | 860 / 22.5 MB (excl. third-party) |
-| data/json | 31.6 MB | 33.4 MB | n/a | 35.6 MB |
-| Mods | 80 | ~45 | n/a | 14 |
-| C++ standard | C++23 | C++14 | C++17 [inference] | C++17 |
-| Frontend | SDL3 (+ Vulkan GPU path), curses | SDL2, curses | SDL2, curses, ImGui starting | SDL3, curses, ImGui removed |
-| Scripting | Lua 5.3 + sol2, deep bindings | EOC (JSON) | EOC | EOC |
-| Tests (Catch2) | 204 test files | 1,201 TEST_CASEs | more than 0.G | **none** (suite deleted 2025-11) |
-| Labs | yes, modular and redesigned (72 files) | yes, data-driven, modular | yes | yes, "old-style" restored, fewer subway-lab zombies |
-| Dense-area perf work | heavy: thread pool, monster AI LOD, async chunk loader, GPU lighting, 89 perf PRs | **little**: predates most DDA perf PRs | includes the 2023–24 DDA perf wave | some DDA perf backports |
-| Active (last 12 months) | 2,616 commits, 117 authors | frozen | frozen | 5,234 commits, 71% by one author |
-| AI policy upstream | **allowed with disclosure** (`Assisted-by:` trailer, human-written PR summary) | banned | banned | banned |
-| License | CC-BY-SA 3.0 game; AGPL-3.0 docs/scripts; CC-BY-SA 4.0 Magical Nights mod | CC-BY-SA 3.0 | CC-BY-SA 3.0 | CC-BY-SA 3.0 |
+|                         | Bright Nights v0.13.0                                                             | CDDA 0.G "Gaiman"                      | CDDA 0.H-RELEASE "Herbert" _(new)_ | TLG rolling build                                   |
+| ----------------------- | --------------------------------------------------------------------------------- | -------------------------------------- | ---------------------------------- | --------------------------------------------------- |
+| Frozen commit           | `e7b4976` (2026-09-25)                                                            | `d6ec466140` (2023-02-28)              | `08f04fd07f` (2024-11-23)          | `f50031b` (2026-11-23)                              |
+| Release model           | stable every 2–6 months + nightlies                                               | stable, no point releases              | stable                             | rolling only, no stables                            |
+| src `.cpp`/`.h`         | 996 files / 21.5 MB                                                               | 784 / 19.4 MB                          | 816 / 20.6 MB                      | 860 / 22.5 MB (excl. third-party)                   |
+| data/json               | 31.6 MB                                                                           | 33.4 MB                                | n/a                                | 35.6 MB                                             |
+| Mods                    | 80                                                                                | ~45                                    | n/a                                | 14                                                  |
+| C++ standard            | C++23                                                                             | C++14                                  | C++17 [inference]                  | C++17                                               |
+| Frontend                | SDL3 (+ Vulkan GPU path), curses                                                  | SDL2, curses                           | SDL2, curses, ImGui starting       | SDL3, curses, ImGui removed                         |
+| Scripting               | Lua 5.3 + sol2, deep bindings                                                     | EOC (JSON)                             | EOC                                | EOC                                                 |
+| Tests (Catch2)          | 204 test files                                                                    | 1,201 TEST_CASEs                       | more than 0.G                      | **none** (suite deleted 2025-11)                    |
+| Labs                    | yes, modular and redesigned (72 files)                                            | yes, data-driven, modular              | yes                                | yes, "old-style" restored, fewer subway-lab zombies |
+| Dense-area perf work    | heavy: thread pool, monster AI LOD, async chunk loader, GPU lighting, 89 perf PRs | **little**: predates most DDA perf PRs | includes the 2023–24 DDA perf wave | some DDA perf backports                             |
+| Active (last 12 months) | 2,616 commits, 117 authors                                                        | frozen                                 | frozen                             | 5,234 commits, 71% by one author                    |
+| AI policy upstream      | **allowed with disclosure** (`Assisted-by:` trailer, human-written PR summary)    | banned                                 | banned                             | banned                                              |
+| License                 | CC-BY-SA 3.0 game; AGPL-3.0 docs/scripts; CC-BY-SA 4.0 Magical Nights mod         | CC-BY-SA 3.0                           | CC-BY-SA 3.0                       | CC-BY-SA 3.0                                        |
 
 ## Bright Nights
 
@@ -68,7 +68,7 @@ Question: which upstream release should be the **Baseline** for a Rust port whos
 
 ## Reading across the candidates
 
-1. **Engine size barely varies:** 19.4–22.5 MB of source across all four. No candidate is meaningfully cheaper to port by size, so the choice turns on *modularity* (the architecture analysis) and *what the engine already does well*.
+1. **Engine size barely varies:** 19.4–22.5 MB of source across all four. No candidate is meaningfully cheaper to port by size, so the choice turns on _modularity_ (the architecture analysis) and _what the engine already does well_.
 2. **0.H-RELEASE dominates 0.G:** about the same size, with the performance work and vision fixes included.
 3. **TLG falls behind on every engine-relevant axis:** same engine, no tests, a single maintainer, and a hostile AI policy. It is worth keeping as a reference for content, not as a Baseline.
 4. **Bright Nights is the strongest on the project's goals:** dense-area performance, an open stance on AI, modern C++, and a team that has already considered Rust. Its threading, GPU paths and Lua raise the cost of proving **Port fidelity**, and it moves fast. Those are reasons to freeze hard on v0.13.0, not reasons to reject it.

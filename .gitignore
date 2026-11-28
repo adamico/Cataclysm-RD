@@ -2,3 +2,5 @@
 /skills-lock.json
 /target/
 /.claude/worktrees/
+/node_modules/
+/tools/rd-checks/target/
