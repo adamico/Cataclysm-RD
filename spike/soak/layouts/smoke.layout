@@ -1,0 +1,16 @@
+# Fields spike smoke layout: one 3x3-submap region (36x36 tiles), mixed fields.
+# Coordinates are region tiles; the centre submap spans x,y 12..23.
+region 3 3
+ter all t_dirt
+# a wall segment so gas spread meets an obstacle
+ter 16 14 t_wall
+ter 16 15 t_wall
+ter 16 16 t_wall
+# fields: field <x> <y> <fd_id> <intensity> <age_turns>  (age >= 1: not newborn)
+field 17 17 fd_smoke 3 1
+field 18 18 fd_tear_gas 2 1
+field 14 20 fd_toxic_gas 3 5
+field 12 12 fd_fire 2 1
+field 13 12 fd_blood 1 1
+# on a submap edge, so spread crosses into a neighbour submap
+field 23 18 fd_smoke 3 1
